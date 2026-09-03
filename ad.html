@@ -1,0 +1,2249 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#087cf0">
+
+    <title>جزئیات آگهی | دیوار کوهمره سرخی</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family:
+                "Vazirmatn",
+                Tahoma,
+                sans-serif;
+
+            background: #f5f7fb;
+
+            color: #172033;
+
+            min-height: 100vh;
+
+            padding-bottom: 90px;
+        }
+
+        button,
+        a {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =====================================================
+   HEADER
+===================================================== */
+
+        .header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255, 255, 255, .94);
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid #e7ebf1;
+        }
+
+        .header-inner {
+
+            max-width: 900px;
+
+            min-height: 66px;
+
+            margin: auto;
+
+            padding:
+                9px 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+        .back-btn {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 1px solid #e1e6ed;
+
+            border-radius: 13px;
+
+            background: #fff;
+
+            color: #465367;
+
+            font-size: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .header-title {
+
+            flex: 1;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+        .home-btn {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 1px solid #e1e6ed;
+
+            border-radius: 13px;
+
+            background: #fff;
+
+            color: #465367;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+
+        /* =====================================================
+   MAIN
+===================================================== */
+
+        .main {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding:
+                15px;
+        }
+
+
+        /* =====================================================
+   LOADING
+===================================================== */
+
+        .loading {
+
+            min-height: 70vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 14px;
+
+            color: #8792a2;
+
+            font-size: 12px;
+        }
+
+        .spinner {
+
+            width: 42px;
+
+            height: 42px;
+
+            border:
+                3px solid #e5eaf0;
+
+            border-top-color: #078df1;
+
+            border-radius: 50%;
+
+            animation:
+                spin .8s linear infinite;
+        }
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* =====================================================
+   ERROR
+===================================================== */
+
+        .error {
+
+            min-height: 70vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .error-icon {
+
+            width: 74px;
+
+            height: 74px;
+
+            border-radius: 24px;
+
+            background: #fff1f0;
+
+            color: #d9362e;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+        .error-title {
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            color: #3b4657;
+        }
+
+        .error-text {
+
+            margin-top: 7px;
+
+            color: #8993a2;
+
+            font-size: 11px;
+
+            line-height: 2;
+        }
+
+        .retry {
+
+            margin-top: 16px;
+
+            border: 0;
+
+            border-radius: 12px;
+
+            height: 42px;
+
+            padding:
+                0 20px;
+
+            background:
+                linear-gradient(135deg,
+                    #09a8ff,
+                    #0875df);
+
+            color: #fff;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+   GALLERY
+===================================================== */
+
+        .gallery {
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            background: #e9eef4;
+
+            border:
+                1px solid #e2e7ee;
+
+            box-shadow:
+                0 8px 28px rgba(25, 45, 70, .07);
+        }
+
+        .main-image {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 1/0.72;
+
+            background:
+                linear-gradient(135deg,
+                    #edf2f7,
+                    #f8fafc);
+
+            overflow: hidden;
+        }
+
+        .main-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+        .no-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+            color: #9ba5b3;
+
+            font-size: 12px;
+        }
+
+        .no-image-icon {
+
+            font-size: 42px;
+
+            opacity: .55;
+        }
+
+
+        /* =====================================================
+   IMAGE ARROWS
+===================================================== */
+
+        .gallery-arrow {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 40px;
+
+            height: 40px;
+
+            border: 0;
+
+            border-radius: 13px;
+
+            background:
+                rgba(20, 32, 48, .58);
+
+            color: #fff;
+
+            backdrop-filter: blur(8px);
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            z-index: 5;
+        }
+
+        .gallery-arrow.show {
+
+            display: flex;
+        }
+
+        .gallery-prev {
+
+            right: 12px;
+        }
+
+        .gallery-next {
+
+            left: 12px;
+        }
+
+
+        /* =====================================================
+   IMAGE COUNTER
+===================================================== */
+
+        .image-counter {
+
+            position: absolute;
+
+            left: 12px;
+
+            top: 12px;
+
+            padding:
+                6px 9px;
+
+            border-radius: 9px;
+
+            background:
+                rgba(20, 32, 48, .66);
+
+            color: #fff;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            backdrop-filter: blur(7px);
+        }
+
+
+        /* =====================================================
+   THUMBNAILS
+===================================================== */
+
+        .thumbnails {
+
+            display: flex;
+
+            gap: 7px;
+
+            overflow-x: auto;
+
+            padding: 9px;
+
+            background: #fff;
+
+            scrollbar-width: none;
+        }
+
+        .thumbnails::-webkit-scrollbar {
+            display: none;
+        }
+
+        .thumbnail {
+
+            flex: none;
+
+            width: 64px;
+
+            height: 52px;
+
+            padding: 0;
+
+            border:
+                2px solid transparent;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            background: #edf1f5;
+        }
+
+        .thumbnail.active {
+
+            border-color: #078df1;
+        }
+
+        .thumbnail img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* =====================================================
+   CONTENT CARD
+===================================================== */
+
+        .card {
+
+            margin-top: 12px;
+
+            padding:
+                18px;
+
+            background: #fff;
+
+            border:
+                1px solid #e6ebf1;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 6px 22px rgba(28, 47, 75, .05);
+        }
+
+
+        /* =====================================================
+   CATEGORY
+===================================================== */
+
+        .category {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            padding:
+                6px 9px;
+
+            border-radius: 9px;
+
+            background: #edf7ff;
+
+            color: #0878df;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+   TITLE
+===================================================== */
+
+        .title {
+
+            margin-top: 11px;
+
+            font-size: 21px;
+
+            font-weight: 900;
+
+            line-height: 1.8;
+
+            color: #1c2636;
+        }
+
+
+        /* =====================================================
+   PRICE
+===================================================== */
+
+        .price-box {
+
+            margin-top: 13px;
+
+            padding:
+                13px 14px;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(135deg,
+                    #f1f9ff,
+                    #f7fbff);
+
+            border:
+                1px solid #dcefff;
+        }
+
+        .price-label {
+
+            color: #8793a4;
+
+            font-size: 9px;
+
+            font-weight: 500;
+        }
+
+        .price {
+
+            margin-top: 3px;
+
+            color: #0876df;
+
+            font-size: 20px;
+
+            font-weight: 900;
+        }
+
+
+        /* =====================================================
+   META
+===================================================== */
+
+        .meta {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 8px;
+
+            margin-top: 13px;
+        }
+
+        .meta-item {
+
+            min-width: 0;
+
+            padding:
+                10px;
+
+            border-radius: 12px;
+
+            background: #f7f9fb;
+
+            border:
+                1px solid #edf0f4;
+        }
+
+        .meta-label {
+
+            color: #9aa3af;
+
+            font-size: 8px;
+        }
+
+        .meta-value {
+
+            margin-top: 3px;
+
+            color: #3f4b5c;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            line-height: 1.7;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+        }
+
+
+        /* =====================================================
+   DESCRIPTION
+===================================================== */
+
+        .section-title {
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            color: #263244;
+
+            margin-bottom: 9px;
+        }
+
+        .description {
+
+            color: #5e6978;
+
+            font-size: 12px;
+
+            line-height: 2.2;
+
+            white-space: pre-wrap;
+
+            word-break: break-word;
+        }
+
+
+        /* =====================================================
+   LOCATION
+===================================================== */
+
+        .location-box {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            padding:
+                12px;
+
+            border-radius: 14px;
+
+            background: #f8fafc;
+
+            border:
+                1px solid #edf0f4;
+        }
+
+        .location-icon {
+
+            font-size: 20px;
+
+            line-height: 1;
+        }
+
+        .location-text {
+
+            min-width: 0;
+        }
+
+        .location-title {
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            color: #697587;
+        }
+
+        .location-value {
+
+            margin-top: 3px;
+
+            color: #3d4959;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+   SELLER
+===================================================== */
+
+        .seller {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .seller-avatar {
+
+            width: 50px;
+
+            height: 50px;
+
+            flex: none;
+
+            border-radius: 17px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(135deg,
+                    #10aaff,
+                    #0874da);
+
+            color: #fff;
+
+            font-size: 21px;
+
+            font-weight: 900;
+        }
+
+        .seller-info {
+
+            min-width: 0;
+
+            flex: 1;
+        }
+
+        .seller-name {
+
+            color: #263244;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+        .seller-phone {
+
+            margin-top: 3px;
+
+            direction: ltr;
+
+            text-align: right;
+
+            color: #8993a1;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+   STATUS
+===================================================== */
+
+        .status {
+
+            margin-top: 13px;
+
+            padding:
+                9px 11px;
+
+            border-radius: 11px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-align: center;
+        }
+
+        .status.pending {
+
+            color: #9a6800;
+
+            background: #fff8df;
+
+            border:
+                1px solid #f5e6a9;
+        }
+
+        .status.approved {
+
+            color: #147946;
+
+            background: #edfff5;
+
+            border:
+                1px solid #c9f0da;
+        }
+
+        .status.rejected {
+
+            color: #c42f28;
+
+            background: #fff1f0;
+
+            border:
+                1px solid #ffd7d4;
+        }
+
+
+        /* =====================================================
+   ACTIONS
+===================================================== */
+
+        .actions {
+
+            position: fixed;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            z-index: 800;
+
+            padding:
+                10px 15px calc(10px + env(safe-area-inset-bottom));
+
+            background:
+                rgba(255, 255, 255, .96);
+
+            backdrop-filter: blur(18px);
+
+            border-top:
+                1px solid #e6ebf1;
+
+            box-shadow:
+                0 -8px 28px rgba(30, 50, 75, .07);
+        }
+
+        .actions-inner {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1.4fr;
+
+            gap: 8px;
+        }
+
+        .action-btn {
+
+            height: 50px;
+
+            border: 0;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+        }
+
+        .action-call {
+
+            color: #0875df;
+
+            background: #edf7ff;
+
+            border:
+                1px solid #d7edff;
+        }
+
+        .action-contact {
+
+            color: #fff;
+
+            background:
+                linear-gradient(135deg,
+                    #09a8ff,
+                    #0875df);
+
+            box-shadow:
+                0 8px 20px rgba(0, 119, 217, .18);
+        }
+
+
+        /* =====================================================
+   SHARE
+===================================================== */
+
+        .share-btn {
+
+            width: 38px;
+
+            height: 38px;
+
+            position: absolute;
+
+            left: 12px;
+
+            bottom: 12px;
+
+            z-index: 6;
+
+            border: 0;
+
+            border-radius: 11px;
+
+            background:
+                rgba(20, 32, 48, .62);
+
+            color: #fff;
+
+            backdrop-filter: blur(7px);
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+   DESKTOP
+===================================================== */
+
+        @media(min-width:700px) {
+
+            .main {
+
+                padding:
+                    22px 18px 110px;
+            }
+
+            .main-image {
+
+                aspect-ratio: 1/0.62;
+            }
+
+            .title {
+
+                font-size: 25px;
+            }
+
+            .card {
+
+                padding: 22px;
+            }
+
+        }
+
+
+        /* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+        @media(max-width:380px) {
+
+            .main {
+
+                padding:
+                    10px 10px 90px;
+            }
+
+            .header-inner {
+
+                padding:
+                    8px 10px;
+            }
+
+            .title {
+
+                font-size: 19px;
+            }
+
+            .card {
+
+                padding: 15px;
+            }
+
+            .meta {
+
+                gap: 6px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     HEADER
+===================================================== -->
+
+    <header class="header">
+
+        <div class="header-inner">
+
+            <button class="back-btn" type="button" onclick="goBack()">
+                ‹
+            </button>
+
+            <div class="header-title">
+                جزئیات آگهی
+            </div>
+
+            <a href="index.html" class="home-btn">
+                ⌂
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+     MAIN
+===================================================== -->
+
+    <main id="main" class="main">
+
+        <div class="loading">
+
+            <div class="spinner"></div>
+
+            <div>
+                در حال دریافت آگهی...
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+     ACTIONS
+===================================================== -->
+
+    <div id="actions" class="actions" style="display:none">
+
+        <div class="actions-inner">
+
+            <a id="callBtn" class="action-btn action-call" href="#">
+                ☎ تماس
+            </a>
+
+            <button id="contactBtn" class="action-btn action-contact" type="button">
+                💬 تماس با فروشنده
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        /* =====================================================
+           CONFIG
+        ===================================================== */
+
+        const API_BASE = "";
+
+
+        /* =====================================================
+           GET AD ID
+        ===================================================== */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const adId =
+            params.get("id");
+
+
+        /* =====================================================
+           ELEMENT
+        ===================================================== */
+
+        const main =
+            document.getElementById("main");
+
+        const actions =
+            document.getElementById("actions");
+
+        const callBtn =
+            document.getElementById("callBtn");
+
+        const contactBtn =
+            document.getElementById("contactBtn");
+
+
+        /* =====================================================
+           STATE
+        ===================================================== */
+
+        let currentAd = null;
+
+        let currentImageIndex = 0;
+
+
+        /* =====================================================
+           HTML ESCAPE
+        ===================================================== */
+
+        function escapeHTML(value) {
+
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* =====================================================
+           PRICE
+        ===================================================== */
+
+        function formatPrice(price) {
+
+            const number =
+                Number(price || 0);
+
+            if (
+                !Number.isFinite(number) ||
+                number <= 0
+            ) {
+
+                return "توافقی";
+
+            }
+
+
+            return new Intl.NumberFormat(
+                "fa-IR"
+            ).format(number) +
+                " تومان";
+
+        }
+
+
+        /* =====================================================
+           DATE
+        ===================================================== */
+
+        function formatDate(value) {
+
+            if (!value) {
+
+                return "-";
+
+            }
+
+
+            const date =
+                new Date(value);
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "-";
+
+            }
+
+
+            try {
+
+                return new Intl.DateTimeFormat(
+                    "fa-IR",
+                    {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric"
+                    }
+                ).format(date);
+
+            } catch (error) {
+
+                return date.toLocaleDateString(
+                    "fa-IR"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           STATUS
+        ===================================================== */
+
+        function getStatusInfo(status) {
+
+            switch (
+            String(status || "").toLowerCase()
+            ) {
+
+                case "approved":
+
+                    return {
+                        className: "approved",
+                        text: "✓ این آگهی تأیید شده است."
+                    };
+
+
+                case "rejected":
+
+                    return {
+                        className: "rejected",
+                        text: "این آگهی تأیید نشده است."
+                    };
+
+
+                case "pending":
+
+                default:
+
+                    return {
+                        className: "pending",
+                        text: "⏳ این آگهی در حال بررسی است."
+                    };
+
+            }
+
+        }
+
+
+        /* =====================================================
+           IMAGES
+        ===================================================== */
+
+        function getImages(ad) {
+
+            if (
+                !Array.isArray(ad.images)
+            ) {
+
+                return [];
+
+            }
+
+
+            return ad.images.filter(
+                function (image) {
+
+                    return (
+                        typeof image === "string" &&
+                        image.startsWith("data:image/")
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           INITIAL GALLERY
+        ===================================================== */
+
+        function renderGallery(ad) {
+
+            const images =
+                getImages(ad);
+
+
+            if (images.length === 0) {
+
+                return `
+
+            <div class="gallery">
+
+                <div class="main-image">
+
+                    <div class="no-image">
+
+                        <div class="no-image-icon">
+                            🖼️
+                        </div>
+
+                        <div>
+                            این آگهی تصویر ندارد
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+            }
+
+
+            return `
+
+        <div class="gallery">
+
+            <div class="main-image">
+
+                <img
+                    id="mainAdImage"
+                    src="${images[0]}"
+                    alt="${escapeHTML(ad.title)}"
+                >
+
+
+                <button
+                    id="prevImage"
+                    class="gallery-arrow gallery-prev ${images.length > 1 ? "show" : ""}"
+                    type="button"
+                    onclick="changeImage(-1)"
+                >
+                    ›
+                </button>
+
+
+                <button
+                    id="nextImage"
+                    class="gallery-arrow gallery-next ${images.length > 1 ? "show" : ""}"
+                    type="button"
+                    onclick="changeImage(1)"
+                >
+                    ‹
+                </button>
+
+
+                ${images.length > 1
+                    ?
+                    `
+                    <div
+                        id="imageCounter"
+                        class="image-counter"
+                    >
+                        ۱ / ${new Intl.NumberFormat("fa-IR").format(images.length)}
+                    </div>
+                    `
+                    :
+                    ""
+                }
+
+
+                <button
+                    class="share-btn"
+                    type="button"
+                    onclick="shareAd()"
+                    title="اشتراک‌گذاری"
+                >
+                    ↗
+                </button>
+
+            </div>
+
+
+            ${images.length > 1
+                    ?
+                    `
+                <div class="thumbnails">
+
+                    ${images.map(
+                        function (image, index) {
+
+                            return `
+
+                                    <button
+                                        class="thumbnail ${index === 0 ? "active" : ""}"
+                                        type="button"
+                                        onclick="selectImage(${index})"
+                                    >
+
+                                        <img
+                                            src="${image}"
+                                            alt="تصویر ${index + 1}"
+                                        >
+
+                                    </button>
+
+                                `;
+
+                        }
+                    ).join("")
+                    }
+
+                </div>
+                `
+                    :
+                    ""
+                }
+
+        </div>
+
+    `;
+
+        }
+
+
+        /* =====================================================
+           RENDER AD
+        ===================================================== */
+
+        function renderAd(ad) {
+
+            currentAd =
+                ad;
+
+            currentImageIndex = 0;
+
+
+            const status =
+                getStatusInfo(
+                    ad.status
+                );
+
+
+            const images =
+                getImages(ad);
+
+
+            const location =
+                ad.location ||
+                (
+                    ad.village
+                        ?
+                        "کوهمره سرخی، " +
+                        ad.village
+                        :
+                        ad.region ||
+                        "کوهمره سرخی"
+                );
+
+
+            const sellerName =
+                ad.seller_name ||
+                "فروشنده";
+
+
+            const sellerInitial =
+                sellerName
+                    .trim()
+                    .charAt(0) ||
+                "ف";
+
+
+            main.innerHTML = `
+
+        <!-- GALLERY -->
+
+        ${renderGallery(ad)}
+
+
+        <!-- TITLE / PRICE -->
+
+        <section class="card">
+
+            ${ad.category
+                    ?
+                    `
+                <div class="category">
+
+                    🏷️
+
+                    ${escapeHTML(ad.category)}
+
+                    ${ad.subcategory
+                        ?
+                        `
+                        <span>
+                            /
+                            ${escapeHTML(ad.subcategory)}
+                        </span>
+                        `
+                        :
+                        ""
+                    }
+
+                </div>
+                `
+                    :
+                    ""
+                }
+
+
+            <h1 class="title">
+
+                ${escapeHTML(
+                    ad.title ||
+                    "بدون عنوان"
+                )}
+
+            </h1>
+
+
+            <div class="price-box">
+
+                <div class="price-label">
+                    قیمت
+                </div>
+
+                <div class="price">
+                    ${formatPrice(ad.price)}
+                </div>
+
+            </div>
+
+
+            <div class="meta">
+
+                <div class="meta-item">
+
+                    <div class="meta-label">
+                        وضعیت کالا
+                    </div>
+
+                    <div class="meta-value">
+                        ${escapeHTML(
+                    ad.condition ||
+                    "مشخص نشده"
+                )}
+                    </div>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <div class="meta-label">
+                        محل
+                    </div>
+
+                    <div class="meta-value">
+                        ${escapeHTML(
+                    location
+                )}
+                    </div>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <div class="meta-label">
+                        تاریخ ثبت
+                    </div>
+
+                    <div class="meta-value">
+                        ${formatDate(
+                    ad.created_at
+                )}
+                    </div>
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <div class="meta-label">
+                        شناسه آگهی
+                    </div>
+
+                    <div class="meta-value">
+                        #${escapeHTML(
+                    ad.id
+                )}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="status ${status.className}"
+            >
+                ${status.text}
+            </div>
+
+        </section>
+
+
+
+        <!-- DESCRIPTION -->
+
+        ${ad.description
+                    ?
+                    `
+            <section class="card">
+
+                <div class="section-title">
+                    توضیحات
+                </div>
+
+                <div class="description">
+                    ${escapeHTML(
+                        ad.description
+                    )}
+                </div>
+
+            </section>
+            `
+                    :
+                    ""
+                }
+
+
+
+        <!-- LOCATION -->
+
+        <section class="card">
+
+            <div class="section-title">
+                موقعیت آگهی
+            </div>
+
+            <div class="location-box">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+                <div class="location-text">
+
+                    <div class="location-title">
+                        محل
+                    </div>
+
+                    <div class="location-value">
+                        ${escapeHTML(
+                    location
+                )}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SELLER -->
+
+        <section class="card">
+
+            <div class="section-title">
+                فروشنده
+            </div>
+
+            <div class="seller">
+
+                <div class="seller-avatar">
+                    ${escapeHTML(
+                    sellerInitial
+                )}
+                </div>
+
+                <div class="seller-info">
+
+                    <div class="seller-name">
+                        ${escapeHTML(
+                    sellerName
+                )}
+                    </div>
+
+                    ${ad.seller_phone
+                    ?
+                    `
+                        <div class="seller-phone">
+                            ${escapeHTML(
+                        ad.seller_phone
+                    )}
+                        </div>
+                        `
+                    :
+                    ""
+                }
+
+                </div>
+
+            </div>
+
+        </section>
+
+    `;
+
+
+            /* =====================================
+               ACTIONS
+            ===================================== */
+
+            if (ad.seller_phone) {
+
+                const phone =
+                    String(
+                        ad.seller_phone
+                    ).replace(
+                        /\D/g,
+                        ""
+                    );
+
+
+                callBtn.href =
+                    "tel:" + phone;
+
+
+                contactBtn.onclick =
+                    function () {
+
+                        window.location.href =
+                            "tel:" + phone;
+
+                    };
+
+
+                actions.style.display =
+                    "block";
+
+            } else {
+
+                actions.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           LOAD AD
+        ===================================================== */
+
+        async function loadAd() {
+
+            if (!adId) {
+
+                showError(
+                    "شناسه آگهی مشخص نیست.",
+                    "لطفاً از صفحه آگهی‌ها یک آگهی را انتخاب کنید."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API_BASE +
+                        "/api/ads/" +
+                        encodeURIComponent(adId),
+                        {
+                            method: "GET",
+
+                            headers: {
+                                "Accept":
+                                    "application/json"
+                            },
+
+                            cache: "no-store"
+                        }
+                    );
+
+
+                let data = {};
+
+
+                try {
+
+                    data =
+                        await response.json();
+
+                } catch (error) {
+
+                    data = {};
+
+                }
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.message ||
+                        "آگهی پیدا نشد."
+                    );
+
+                }
+
+
+                if (
+                    !data.success ||
+                    !data.ad
+                ) {
+
+                    throw new Error(
+                        data.message ||
+                        "اطلاعات آگهی دریافت نشد."
+                    );
+
+                }
+
+
+                renderAd(
+                    data.ad
+                );
+
+
+                document.title =
+                    (
+                        data.ad.title
+                        ||
+                        "جزئیات آگهی"
+                    ) +
+                    " | دیوار کوهمره سرخی";
+
+
+            } catch (error) {
+
+                console.error(
+                    "LOAD AD ERROR:",
+                    error
+                );
+
+
+                showError(
+                    "آگهی پیدا نشد.",
+                    error.message ||
+                    "خطا در دریافت اطلاعات آگهی."
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ERROR
+        ===================================================== */
+
+        function showError(
+            title,
+            text
+        ) {
+
+            actions.style.display =
+                "none";
+
+
+            main.innerHTML = `
+
+        <div class="error">
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <div class="error-title">
+                ${escapeHTML(title)}
+            </div>
+
+            <div class="error-text">
+                ${escapeHTML(text)}
+            </div>
+
+            <button
+                class="retry"
+                type="button"
+                onclick="loadAd()"
+            >
+                تلاش مجدد
+            </button>
+
+        </div>
+
+    `;
+
+        }
+
+
+        /* =====================================================
+           SELECT IMAGE
+        ===================================================== */
+
+        function selectImage(index) {
+
+            if (!currentAd) {
+
+                return;
+
+            }
+
+
+            const images =
+                getImages(
+                    currentAd
+                );
+
+
+            if (
+                index < 0 ||
+                index >= images.length
+            ) {
+
+                return;
+
+            }
+
+
+            currentImageIndex =
+                index;
+
+
+            const mainImage =
+                document.getElementById(
+                    "mainAdImage"
+                );
+
+
+            if (mainImage) {
+
+                mainImage.src =
+                    images[index];
+
+            }
+
+
+            document
+                .querySelectorAll(
+                    ".thumbnail"
+                )
+                .forEach(
+                    function (button, i) {
+
+                        button.classList.toggle(
+                            "active",
+                            i === index
+                        );
+
+                    }
+                );
+
+
+            const counter =
+                document.getElementById(
+                    "imageCounter"
+                );
+
+
+            if (counter) {
+
+                counter.textContent =
+                    `${new Intl.NumberFormat("fa-IR").format(index + 1)} / ${new Intl.NumberFormat("fa-IR").format(images.length)}`;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CHANGE IMAGE
+        ===================================================== */
+
+        function changeImage(direction) {
+
+            if (!currentAd) {
+
+                return;
+
+            }
+
+
+            const images =
+                getImages(
+                    currentAd
+                );
+
+
+            if (images.length <= 1) {
+
+                return;
+
+            }
+
+
+            let next =
+                currentImageIndex +
+                direction;
+
+
+            if (next < 0) {
+
+                next =
+                    images.length - 1;
+
+            }
+
+
+            if (next >= images.length) {
+
+                next = 0;
+
+            }
+
+
+            selectImage(next);
+
+        }
+
+
+        /* =====================================================
+           SHARE
+        ===================================================== */
+
+        async function shareAd() {
+
+            const url =
+                window.location.href;
+
+
+            const title =
+                currentAd &&
+                    currentAd.title
+                    ?
+                    currentAd.title
+                    :
+                    "آگهی دیوار کوهمره سرخی";
+
+
+            if (
+                navigator.share
+            ) {
+
+                try {
+
+                    await navigator.share({
+                        title: title,
+                        text:
+                            "مشاهده این آگهی در دیوار کوهمره سرخی",
+                        url: url
+                    });
+
+                    return;
+
+                } catch (error) {
+
+                    if (
+                        error.name ===
+                        "AbortError"
+                    ) {
+
+                        return;
+
+                    }
+
+                }
+
+            }
+
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    url
+                );
+
+
+                alert(
+                    "لینک آگهی کپی شد."
+                );
+
+            } catch (error) {
+
+                alert(
+                    "لینک آگهی:\n" +
+                    url
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           BACK
+        ===================================================== */
+
+        function goBack() {
+
+            if (
+                document.referrer &&
+                document.referrer.includes(
+                    window.location.host
+                )
+            ) {
+
+                window.history.back();
+
+            } else {
+
+                window.location.href =
+                    "index.html";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           START
+        ===================================================== */
+
+        loadAd();
+
+    </script>
+
+</body>
+
+</html>

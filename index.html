@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#087cf0">
+
+    <meta name="description" content="دیوار کوهمره سرخی؛ خرید، فروش و ثبت آگهی در کوهمره سرخی">
+
+    <title>دیوار کوهمره سرخی | خرید و فروش</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        /* =====================================================
+   RESET
+===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family:
+                "Vazirmatn",
+                Tahoma,
+                sans-serif;
+
+            background: #f5f7fb;
+
+            color: #172033;
+
+            min-height: 100vh;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =====================================================
+   HEADER
+===================================================== */
+
+        .header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255, 255, 255, .92);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid #e8edf4;
+        }
+
+        .header-inner {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            min-height: 72px;
+
+            padding:
+                10px 16px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 12px;
+        }
+
+
+        /* =====================================================
+   BRAND
+===================================================== */
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            min-width: 0;
+        }
+
+        .brand-logo {
+
+            width: 46px;
+
+            height: 46px;
+
+            flex: none;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #fff;
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(145deg,
+                    #10b7ff,
+                    #0874dc);
+
+            box-shadow:
+                0 9px 22px rgba(0, 119, 217, .22);
+        }
+
+        .brand-text {
+
+            min-width: 0;
+        }
+
+        .brand-title {
+
+            font-size: 15px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+        .brand-subtitle {
+
+            margin-top: 1px;
+
+            color: #8993a4;
+
+            font-size: 10px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+        .header-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        .header-btn {
+
+            height: 42px;
+
+            padding:
+                0 13px;
+
+            border:
+                1px solid #e1e7ef;
+
+            background: #fff;
+
+            border-radius: 13px;
+
+            color: #364152;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 6px;
+
+            transition: .2s;
+        }
+
+        .header-btn:active {
+
+            transform: scale(.97);
+        }
+
+        .header-btn.primary {
+
+            color: #fff;
+
+            border-color: transparent;
+
+            background:
+                linear-gradient(135deg,
+                    #09a8ff,
+                    #0875df);
+
+            box-shadow:
+                0 7px 18px rgba(0, 119, 217, .18);
+        }
+
+
+        /* =====================================================
+   HERO
+===================================================== */
+
+        .hero {
+
+            max-width: 1100px;
+
+            margin:
+                0 auto;
+
+            padding:
+                22px 16px 8px;
+        }
+
+        .hero-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            padding:
+                25px 20px;
+
+            color: #fff;
+
+            background:
+                radial-gradient(circle at 90% 10%,
+                    rgba(255, 255, 255, .20),
+                    transparent 32%),
+                linear-gradient(135deg,
+                    #069fff,
+                    #086ad1);
+
+            box-shadow:
+                0 18px 45px rgba(0, 111, 220, .18);
+        }
+
+        .hero-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 170px;
+
+            height: 170px;
+
+            border-radius: 50%;
+
+            left: -60px;
+
+            bottom: -100px;
+
+            background:
+                rgba(255, 255, 255, .10);
+        }
+
+        .hero-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+
+            height: 100px;
+
+            border-radius: 50%;
+
+            right: 42%;
+
+            top: -65px;
+
+            background:
+                rgba(255, 255, 255, .08);
+        }
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .hero-title {
+
+            font-size: 24px;
+
+            font-weight: 900;
+
+            line-height: 1.7;
+        }
+
+        .hero-title span {
+
+            color: #dff5ff;
+        }
+
+        .hero-description {
+
+            margin-top: 7px;
+
+            color:
+                rgba(255, 255, 255, .88);
+
+            font-size: 12px;
+
+            line-height: 2;
+        }
+
+        .hero-location {
+
+            margin-top: 14px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding:
+                7px 11px;
+
+            border-radius: 11px;
+
+            background:
+                rgba(255, 255, 255, .13);
+
+            border:
+                1px solid rgba(255, 255, 255, .16);
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+   SEARCH
+===================================================== */
+
+        .search-area {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                12px 16px 6px;
+        }
+
+        .search-box {
+
+            position: relative;
+        }
+
+        .search-input {
+
+            width: 100%;
+
+            height: 56px;
+
+            border:
+                1px solid #e1e6ee;
+
+            border-radius: 17px;
+
+            outline: none;
+
+            background: #fff;
+
+            padding:
+                0 48px 0 50px;
+
+            color: #202938;
+
+            font-size: 13px;
+
+            box-shadow:
+                0 6px 22px rgba(30, 60, 90, .05);
+
+            transition: .2s;
+        }
+
+        .search-input:focus {
+
+            border-color: #08a6ff;
+
+            box-shadow:
+                0 0 0 4px rgba(0, 168, 255, .08);
+        }
+
+        .search-icon {
+
+            position: absolute;
+
+            right: 17px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #8994a5;
+
+            font-size: 20px;
+
+            pointer-events: none;
+        }
+
+        .clear-search {
+
+            position: absolute;
+
+            left: 12px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            width: 32px;
+
+            height: 32px;
+
+            border: 0;
+
+            border-radius: 10px;
+
+            background: #f2f5f9;
+
+            color: #6d7787;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
+   CATEGORIES
+===================================================== */
+
+        .categories-wrap {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                9px 16px 2px;
+
+            overflow: hidden;
+        }
+
+        .categories {
+
+            display: flex;
+
+            gap: 8px;
+
+            overflow-x: auto;
+
+            padding-bottom: 7px;
+
+            scrollbar-width: none;
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-btn {
+
+            flex: none;
+
+            height: 38px;
+
+            padding:
+                0 14px;
+
+            border:
+                1px solid #e2e7ee;
+
+            border-radius: 12px;
+
+            background: #fff;
+
+            color: #687487;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            transition: .2s;
+        }
+
+        .category-btn.active {
+
+            color: #fff;
+
+            border-color: #0879df;
+
+            background:
+                linear-gradient(135deg,
+                    #0ba8ff,
+                    #0875df);
+
+            box-shadow:
+                0 6px 15px rgba(0, 119, 217, .15);
+        }
+
+
+        /* =====================================================
+   SECTION HEADER
+===================================================== */
+
+        .ads-section {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                16px 16px 40px;
+        }
+
+        .section-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 13px;
+
+            gap: 10px;
+        }
+
+        .section-title {
+
+            font-size: 17px;
+
+            font-weight: 900;
+        }
+
+        .section-count {
+
+            color: #8a95a6;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+   ADS GRID
+===================================================== */
+
+        .ads-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 11px;
+        }
+
+
+        /* =====================================================
+   AD CARD
+===================================================== */
+
+        .ad-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            min-width: 0;
+
+            background: #fff;
+
+            border:
+                1px solid #e8edf3;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 18px rgba(28, 47, 75, .05);
+
+            transition:
+                transform .2s,
+                box-shadow .2s;
+
+            animation:
+                cardIn .35s ease both;
+        }
+
+        @keyframes cardIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .ad-card:active {
+
+            transform: scale(.985);
+        }
+
+        .ad-image {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 1/0.78;
+
+            background:
+                linear-gradient(135deg,
+                    #edf2f7,
+                    #f8fafc);
+
+            overflow: hidden;
+        }
+
+        .ad-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+        .ad-no-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 6px;
+
+            color: #a1aab7;
+
+            font-size: 11px;
+        }
+
+        .ad-no-image-icon {
+
+            font-size: 28px;
+
+            opacity: .6;
+        }
+
+        .ad-badge {
+
+            position: absolute;
+
+            right: 8px;
+
+            top: 8px;
+
+            padding:
+                5px 8px;
+
+            border-radius: 9px;
+
+            color: #fff;
+
+            background:
+                rgba(20, 32, 48, .72);
+
+            backdrop-filter:
+                blur(7px);
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+        .image-count {
+
+            position: absolute;
+
+            left: 8px;
+
+            bottom: 8px;
+
+            padding:
+                5px 7px;
+
+            border-radius: 8px;
+
+            color: #fff;
+
+            background:
+                rgba(20, 32, 48, .68);
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+   CARD CONTENT
+===================================================== */
+
+        .ad-content {
+
+            padding:
+                11px 11px 12px;
+        }
+
+        .ad-title {
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            line-height: 1.8;
+
+            color: #1d2635;
+
+            display:
+                -webkit-box;
+
+            -webkit-line-clamp: 2;
+
+            -webkit-box-orient: vertical;
+
+            overflow: hidden;
+
+            min-height: 47px;
+        }
+
+        .ad-location {
+
+            margin-top: 6px;
+
+            color: #8a95a4;
+
+            font-size: 9px;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+        }
+
+        .ad-bottom {
+
+            margin-top: 9px;
+
+            padding-top: 9px;
+
+            border-top:
+                1px solid #f0f2f5;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 5px;
+        }
+
+        .ad-price {
+
+            color: #0876df;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            line-height: 1.5;
+        }
+
+        .ad-price-label {
+
+            color: #9aa3af;
+
+            font-size: 8px;
+
+            font-weight: 500;
+
+            margin-top: 1px;
+        }
+
+        .ad-condition {
+
+            color: #6f7a89;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+            text-align: left;
+        }
+
+
+        /* =====================================================
+   LOADING
+===================================================== */
+
+        .loading {
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                50px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 13px;
+
+            color: #8792a2;
+        }
+
+        .spinner {
+
+            width: 38px;
+
+            height: 38px;
+
+            border:
+                3px solid #e6ebf1;
+
+            border-top-color: #078df1;
+
+            border-radius: 50%;
+
+            animation:
+                spin .8s linear infinite;
+        }
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .loading-text {
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+   EMPTY
+===================================================== */
+
+        .empty {
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                48px 20px;
+
+            text-align: center;
+
+            color: #8b95a4;
+        }
+
+        .empty-icon {
+
+            width: 68px;
+
+            height: 68px;
+
+            margin:
+                0 auto 13px;
+
+            border-radius: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #edf5fd;
+
+            color: #138ce8;
+
+            font-size: 29px;
+        }
+
+        .empty-title {
+
+            color: #495568;
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+        .empty-text {
+
+            margin-top: 5px;
+
+            font-size: 10px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+   ERROR
+===================================================== */
+
+        .error-box {
+
+            grid-column:
+                1 / -1;
+
+            padding:
+                25px 18px;
+
+            border-radius: 17px;
+
+            text-align: center;
+
+            background: #fff3f2;
+
+            border:
+                1px solid #ffd9d5;
+
+            color: #c9342c;
+
+            font-size: 11px;
+
+            line-height: 2;
+        }
+
+        .retry-btn {
+
+            margin-top: 12px;
+
+            height: 39px;
+
+            padding:
+                0 17px;
+
+            border: 0;
+
+            border-radius: 11px;
+
+            background: #d9362e;
+
+            color: #fff;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+   DESKTOP
+===================================================== */
+
+        @media(min-width:650px) {
+
+            .ads-grid {
+
+                grid-template-columns:
+                    repeat(3, minmax(0, 1fr));
+
+                gap: 15px;
+            }
+
+            .ad-card:hover {
+
+                transform: translateY(-3px);
+
+                box-shadow:
+                    0 12px 30px rgba(28, 47, 75, .09);
+            }
+
+        }
+
+        @media(min-width:900px) {
+
+            .ads-grid {
+
+                grid-template-columns:
+                    repeat(4, minmax(0, 1fr));
+            }
+
+            .hero {
+
+                padding-top: 25px;
+            }
+
+            .hero-card {
+
+                padding:
+                    35px 35px;
+            }
+
+            .hero-title {
+
+                font-size: 30px;
+            }
+
+        }
+
+
+        /* =====================================================
+   MOBILE SMALL
+===================================================== */
+
+        @media(max-width:380px) {
+
+            .header-inner {
+
+                padding:
+                    9px 11px;
+            }
+
+            .brand-title {
+
+                font-size: 13px;
+            }
+
+            .brand-subtitle {
+
+                font-size: 9px;
+            }
+
+            .brand-logo {
+
+                width: 42px;
+
+                height: 42px;
+
+                border-radius: 13px;
+
+                font-size: 22px;
+            }
+
+            .header-btn {
+
+                padding:
+                    0 10px;
+
+                font-size: 10px;
+            }
+
+            .hero {
+
+                padding:
+                    15px 11px 6px;
+            }
+
+            .hero-card {
+
+                border-radius: 22px;
+
+                padding:
+                    21px 17px;
+            }
+
+            .hero-title {
+
+                font-size: 21px;
+            }
+
+            .search-area {
+
+                padding:
+                    10px 11px 5px;
+            }
+
+            .categories-wrap {
+
+                padding:
+                    8px 11px 2px;
+            }
+
+            .ads-section {
+
+                padding:
+                    14px 11px 35px;
+            }
+
+            .ads-grid {
+
+                gap: 8px;
+            }
+
+            .ad-content {
+
+                padding:
+                    9px 9px 10px;
+            }
+
+            .ad-title {
+
+                font-size: 12px;
+
+                min-height: 43px;
+            }
+
+        }
+
+
+        /* =====================================================
+   BOTTOM NAV MOBILE
+===================================================== */
+
+        .bottom-nav {
+
+            position: fixed;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            z-index: 900;
+
+            height: 66px;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content:
+                space-around;
+
+            background:
+                rgba(255, 255, 255, .96);
+
+            backdrop-filter:
+                blur(16px);
+
+            border-top:
+                1px solid #e7ebf1;
+
+            box-shadow:
+                0 -8px 25px rgba(25, 50, 80, .06);
+        }
+
+        .bottom-item {
+
+            min-width: 68px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #8994a3;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 4px;
+
+            font-size: 9px;
+
+            font-weight: 600;
+        }
+
+        .bottom-icon {
+
+            font-size: 20px;
+
+            line-height: 1;
+        }
+
+        .bottom-item.active {
+
+            color: #087be2;
+        }
+
+        .bottom-post {
+
+            width: 48px;
+
+            height: 48px;
+
+            margin-top: -18px;
+
+            border-radius: 16px;
+
+            border: 4px solid #f5f7fb;
+
+            background:
+                linear-gradient(135deg,
+                    #0aa9ff,
+                    #0875df);
+
+            color: #fff;
+
+            font-size: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow:
+                0 8px 20px rgba(0, 119, 217, .25);
+        }
+
+        @media(max-width:649px) {
+
+            body {
+
+                padding-bottom: 66px;
+            }
+
+            .bottom-nav {
+
+                display: flex;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     HEADER
+===================================================== -->
+
+    <header class="header">
+
+        <div class="header-inner">
+
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-logo">
+                    د
+                </div>
+
+                <div class="brand-text">
+
+                    <div class="brand-title">
+                        دیوار کوهمره سرخی
+                    </div>
+
+                    <div class="brand-subtitle">
+                        خرید • فروش • خدمات
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <div class="header-actions">
+
+                <a href="post.html" class="header-btn primary">
+                    ＋ ثبت آگهی
+                </a>
+
+                <a id="profileHeaderBtn" href="login.html" class="header-btn">
+                    ورود
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+     HERO
+===================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-card">
+
+            <div class="hero-content">
+
+                <div class="hero-title">
+
+                    هر چیزی را
+                    <span>پیدا کن</span>
+
+                </div>
+
+                <div class="hero-description">
+
+                    آگهی‌های خرید، فروش، خدمات و فرصت‌های
+                    کوهمره سرخی را اینجا پیدا کنید.
+
+                </div>
+
+                <div class="hero-location">
+
+                    📍 کوهمره سرخی
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     SEARCH
+===================================================== -->
+
+    <section class="search-area">
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                ⌕
+            </span>
+
+            <input id="searchInput" class="search-input" type="search" placeholder="جستجو در آگهی‌ها..."
+                autocomplete="off">
+
+            <button id="clearSearch" class="clear-search" type="button">
+                ×
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+    <section class="categories-wrap">
+
+        <div id="categories" class="categories">
+
+            <button class="category-btn active" data-category="">
+                همه
+            </button>
+
+            <button class="category-btn" data-category="املاک">
+                املاک
+            </button>
+
+            <button class="category-btn" data-category="وسایل نقلیه">
+                وسایل نقلیه
+            </button>
+
+            <button class="category-btn" data-category="کالای دیجیتال">
+                کالای دیجیتال
+            </button>
+
+            <button class="category-btn" data-category="خانه و آشپزخانه">
+                خانه و آشپزخانه
+            </button>
+
+            <button class="category-btn" data-category="خدمات">
+                خدمات
+            </button>
+
+            <button class="category-btn" data-category="استخدام">
+                استخدام
+            </button>
+
+            <button class="category-btn" data-category="کشاورزی و دام">
+                کشاورزی و دام
+            </button>
+
+            <button class="category-btn" data-category="پوشاک">
+                پوشاک
+            </button>
+
+            <button class="category-btn" data-category="لوازم شخصی">
+                لوازم شخصی
+            </button>
+
+            <button class="category-btn" data-category="سرگرمی و فراغت">
+                سرگرمی و فراغت
+            </button>
+
+            <button class="category-btn" data-category="تجهیزات">
+                تجهیزات
+            </button>
+
+            <button class="category-btn" data-category="سایر">
+                سایر
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     ADS
+===================================================== -->
+
+    <main class="ads-section">
+
+        <div class="section-header">
+
+            <div class="section-title">
+                آخرین آگهی‌ها
+            </div>
+
+            <div id="sectionCount" class="section-count">
+                در حال دریافت...
+            </div>
+
+        </div>
+
+
+        <div id="adsGrid" class="ads-grid">
+
+            <div class="loading">
+
+                <div class="spinner"></div>
+
+                <div class="loading-text">
+                    در حال دریافت آگهی‌ها...
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+    <nav class="bottom-nav">
+
+
+        <button class="bottom-item active" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+            <span class="bottom-icon">
+                ⌂
+            </span>
+
+            <span>
+                خانه
+            </span>
+
+        </button>
+
+
+        <a href="post.html" class="bottom-post">
+            ＋
+        </a>
+
+
+        <a id="profileBottom" href="login.html" class="bottom-item">
+
+            <span class="bottom-icon">
+                ♙
+            </span>
+
+            <span>
+                حساب من
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <script>
+
+        /* =====================================================
+           CONFIG
+        ===================================================== */
+
+        const API_BASE = "";
+
+
+        /* =====================================================
+           STATE
+        ===================================================== */
+
+        let allAds = [];
+
+        let selectedCategory = "";
+
+        let searchText = "";
+
+
+        /* =====================================================
+           ELEMENTS
+        ===================================================== */
+
+        const adsGrid =
+            document.getElementById("adsGrid");
+
+        const sectionCount =
+            document.getElementById("sectionCount");
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const clearSearch =
+            document.getElementById("clearSearch");
+
+        const categories =
+            document.getElementById("categories");
+
+        const profileHeaderBtn =
+            document.getElementById("profileHeaderBtn");
+
+        const profileBottom =
+            document.getElementById("profileBottom");
+
+
+        /* =====================================================
+           AUTH STATE
+        ===================================================== */
+
+        function isLoggedIn() {
+
+            const token =
+                localStorage.getItem("auth_token");
+
+            return !!token;
+        }
+
+
+        /* =====================================================
+           UPDATE PROFILE BUTTON
+        ===================================================== */
+
+        function updateAuthUI() {
+
+            if (isLoggedIn()) {
+
+                profileHeaderBtn.href =
+                    "profile.html";
+
+                profileHeaderBtn.textContent =
+                    "حساب من";
+
+                profileBottom.href =
+                    "profile.html";
+
+            } else {
+
+                profileHeaderBtn.href =
+                    "login.html";
+
+                profileHeaderBtn.textContent =
+                    "ورود";
+
+                profileBottom.href =
+                    "login.html";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FORMAT PRICE
+        ===================================================== */
+
+        function formatPrice(price) {
+
+            const number =
+                Number(price || 0);
+
+            if (!Number.isFinite(number) || number <= 0) {
+
+                return "توافقی";
+
+            }
+
+
+            return new Intl.NumberFormat(
+                "fa-IR"
+            ).format(number) + " تومان";
+
+        }
+
+
+        /* =====================================================
+           ESCAPE HTML
+        ===================================================== */
+
+        function escapeHTML(value) {
+
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* =====================================================
+           IMAGE VALIDATION
+        ===================================================== */
+
+        function getFirstImage(ad) {
+
+            if (
+                !Array.isArray(ad.images) ||
+                ad.images.length === 0
+            ) {
+
+                return null;
+
+            }
+
+
+            const image =
+                ad.images[0];
+
+            if (
+                typeof image !== "string"
+            ) {
+
+                return null;
+
+            }
+
+
+            if (
+                !image.startsWith("data:image/")
+            ) {
+
+                return null;
+
+            }
+
+
+            return image;
+
+        }
+
+
+        /* =====================================================
+           IMAGE FALLBACK
+        ===================================================== */
+
+        function imageHTML(ad) {
+
+            const image =
+                getFirstImage(ad);
+
+
+            if (image) {
+
+                return `
+            <img
+                src="${image}"
+                alt="${escapeHTML(ad.title)}"
+                loading="lazy"
+                onerror="this.style.display='none';this.parentElement.querySelector('.image-fallback').style.display='flex';"
+            >
+
+            <div
+                class="ad-no-image image-fallback"
+                style="display:none"
+            >
+
+                <div class="ad-no-image-icon">
+                    🖼️
+                </div>
+
+                <div>
+                    تصویر قابل نمایش نیست
+                </div>
+
+            </div>
+        `;
+
+            }
+
+
+            return `
+        <div class="ad-no-image">
+
+            <div class="ad-no-image-icon">
+                🖼️
+            </div>
+
+            <div>
+                بدون تصویر
+            </div>
+
+        </div>
+    `;
+
+        }
+
+
+        /* =====================================================
+           AD CARD
+        ===================================================== */
+
+        function createAdCard(ad, index) {
+
+            const imageCount =
+                Array.isArray(ad.images)
+                    ? ad.images.length
+                    : 0;
+
+
+            const location =
+                ad.location ||
+                ad.village ||
+                ad.region ||
+                "کوهمره سرخی";
+
+
+            const condition =
+                ad.condition ||
+                "";
+
+
+            return `
+        <a
+            class="ad-card"
+            href="ad.html?id=${encodeURIComponent(ad.id)}"
+            style="animation-delay:${Math.min(index, 12) * 35}ms"
+        >
+
+            <div class="ad-image">
+
+                ${imageHTML(ad)}
+
+                ${ad.category
+                    ?
+                    `
+                    <div class="ad-badge">
+                        ${escapeHTML(ad.category)}
+                    </div>
+                    `
+                    :
+                    ""
+                }
+
+                ${imageCount > 1
+                    ?
+                    `
+                    <div class="image-count">
+                        📷 ${imageCount}
+                    </div>
+                    `
+                    :
+                    ""
+                }
+
+            </div>
+
+
+            <div class="ad-content">
+
+                <div class="ad-title">
+                    ${escapeHTML(ad.title || "بدون عنوان")}
+                </div>
+
+
+                <div class="ad-location">
+                    📍 ${escapeHTML(location)}
+                </div>
+
+
+                <div class="ad-bottom">
+
+                    <div>
+
+                        <div class="ad-price">
+                            ${formatPrice(ad.price)}
+                        </div>
+
+                        <div class="ad-price-label">
+                            قیمت
+                        </div>
+
+                    </div>
+
+
+                    ${condition
+                    ?
+                    `
+                        <div class="ad-condition">
+                            ${escapeHTML(condition)}
+                        </div>
+                        `
+                    :
+                    ""
+                }
+
+                </div>
+
+            </div>
+
+        </a>
+    `;
+
+        }
+
+
+        /* =====================================================
+           RENDER ADS
+        ===================================================== */
+
+        function renderAds(list) {
+
+            if (!Array.isArray(list)) {
+
+                list = [];
+
+            }
+
+
+            sectionCount.textContent =
+                list.length
+                    ? `${new Intl.NumberFormat("fa-IR").format(list.length)} آگهی`
+                    : "آگهی‌ای وجود ندارد";
+
+
+            if (list.length === 0) {
+
+                adsGrid.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    🔍
+                </div>
+
+                <div class="empty-title">
+                    آگهی‌ای پیدا نشد
+                </div>
+
+                <div class="empty-text">
+                    جستجو یا دسته‌بندی دیگری را امتحان کنید.
+                </div>
+
+            </div>
+
+        `;
+
+                return;
+
+            }
+
+
+            adsGrid.innerHTML =
+                list
+                    .map(createAdCard)
+                    .join("");
+
+        }
+
+
+        /* =====================================================
+           FILTER ADS
+        ===================================================== */
+
+        function filterAds() {
+
+            const query =
+                searchText
+                    .trim()
+                    .toLowerCase();
+
+
+            const filtered =
+                allAds.filter(function (ad) {
+
+                    const matchesCategory =
+                        !selectedCategory ||
+                        String(ad.category || "") ===
+                        selectedCategory;
+
+
+                    if (!matchesCategory) {
+
+                        return false;
+
+                    }
+
+
+                    if (!query) {
+
+                        return true;
+
+                    }
+
+
+                    const searchable = [
+
+                        ad.title,
+
+                        ad.description,
+
+                        ad.category,
+
+                        ad.subcategory,
+
+                        ad.region,
+
+                        ad.village,
+
+                        ad.location,
+
+                        ad.condition
+
+                    ]
+                        .filter(Boolean)
+                        .join(" ")
+                        .toLowerCase();
+
+
+                    return searchable.includes(query);
+
+                });
+
+
+            renderAds(filtered);
+
+        }
+
+
+        /* =====================================================
+           LOAD ADS FROM BACKEND
+        ===================================================== */
+
+        async function loadAds() {
+
+            adsGrid.innerHTML = `
+
+        <div class="loading">
+
+            <div class="spinner"></div>
+
+            <div class="loading-text">
+                در حال دریافت آگهی‌ها...
+            </div>
+
+        </div>
+
+    `;
+
+
+            sectionCount.textContent =
+                "در حال دریافت...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API_BASE + "/api/ads",
+                        {
+                            method: "GET",
+
+                            headers: {
+                                "Accept":
+                                    "application/json"
+                            },
+
+                            cache: "no-store"
+                        }
+                    );
+
+
+                let data = null;
+
+
+                try {
+
+                    data =
+                        await response.json();
+
+                } catch (error) {
+
+                    data = null;
+
+                }
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data &&
+                            data.message
+                            ? data.message
+                            : "خطا در دریافت آگهی‌ها"
+                    );
+
+                }
+
+
+                if (
+                    !data ||
+                    !data.success
+                ) {
+
+                    throw new Error(
+                        data &&
+                            data.message
+                            ? data.message
+                            : "پاسخ نامعتبر از سرور"
+                    );
+
+                }
+
+
+                allAds =
+                    Array.isArray(data.ads)
+                        ? data.ads
+                        : [];
+
+
+                filterAds();
+
+
+            } catch (error) {
+
+                console.error(
+                    "LOAD ADS ERROR:",
+                    error
+                );
+
+
+                sectionCount.textContent =
+                    "خطا";
+
+
+                adsGrid.innerHTML = `
+
+            <div class="error-box">
+
+                ❌
+
+                <br>
+
+                دریافت آگهی‌ها با خطا مواجه شد.
+
+                <br>
+
+                <small>
+                    ${escapeHTML(error.message || "خطای ناشناخته")}
+                </small>
+
+                <br>
+
+                <button
+                    class="retry-btn"
+                    type="button"
+                    onclick="loadAds()"
+                >
+                    تلاش مجدد
+                </button>
+
+            </div>
+
+        `;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SEARCH
+        ===================================================== */
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                searchText =
+                    this.value || "";
+
+
+                clearSearch.style.display =
+                    searchText
+                        ? "flex"
+                        : "none";
+
+
+                filterAds();
+
+            }
+        );
+
+
+        /* =====================================================
+           CLEAR SEARCH
+        ===================================================== */
+
+        clearSearch.addEventListener(
+            "click",
+            function () {
+
+                searchInput.value = "";
+
+                searchText = "";
+
+                clearSearch.style.display =
+                    "none";
+
+                searchInput.focus();
+
+                filterAds();
+
+            }
+        );
+
+
+        /* =====================================================
+           CATEGORY
+        ===================================================== */
+
+        categories.addEventListener(
+            "click",
+            function (event) {
+
+                const button =
+                    event.target.closest(
+                        ".category-btn"
+                    );
+
+
+                if (!button) {
+
+                    return;
+
+                }
+
+
+                document
+                    .querySelectorAll(
+                        ".category-btn"
+                    )
+                    .forEach(function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                selectedCategory =
+                    button.dataset.category || "";
+
+
+                filterAds();
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIALIZE
+        ===================================================== */
+
+        updateAuthUI();
+
+        loadAds();
+
+    </script>
+
+</body>
+
+</html>
