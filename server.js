@@ -40,7 +40,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 // بررسی JWT_SECRET
 if (!JWT_SECRET) {
-    console.error("ERROR: JWT_SECRET در فایل .env تنظیم نشده است.");
+    console.error("ERROR: JWT_SECRET environment variable is missing.");
     process.exit(1);
 }
 
