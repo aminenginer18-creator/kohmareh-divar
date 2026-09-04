@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ثبت آگهی | دیوار کوهمره سرخی</title>
+<link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap"
+    rel="stylesheet"
+>
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:vazirmatn;
+    background:linear-gradient(180deg,#f4f7fc,#eef3fb);
+    color:#172033;
+    min-height:100vh;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #e4e9f1;
+}
+
+.header-inner{
+    max-width:900px;
+    margin:auto;
+    min-height:70px;
+    padding:10px 15px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.back{
+    width:42px;
+    height:42px;
+    border:1px solid #e2e7ef;
+    background:white;
+    border-radius:13px;
+    cursor:pointer;
+    font-size:19px;
+    color:#253149;
+}
+
+.header-title{
+    flex:1;
+}
+
+.header-title h1{
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.header-title span{
+    color:#8791a2;
+    font-size:10px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:15px 12px 45px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e3e8f0;
+    border-radius:20px;
+    padding:17px;
+    margin-bottom:13px;
+    box-shadow:0 7px 22px rgba(30,50,90,.045);
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.card-title h2{
+    font-size:15px;
+}
+
+.required-note{
+    color:#8a94a5;
+    font-size:10px;
+}
+
+label{
+    display:block;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:7px;
+    color:#354157;
+}
+
+.required{
+    color:#ef4444;
+    margin-right:3px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    border:1px solid #dfe5ee;
+    background:#fbfcfe;
+    border-radius:13px;
+    outline:none;
+    padding:12px;
+    font-size:12px;
+    color:#1c2639;
+    transition:.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#1264ff;
+    background:#fff;
+    box-shadow:0 0 0 3px rgba(18,100,255,.08);
+}
+
+textarea{
+    min-height:125px;
+    resize:vertical;
+    line-height:2;
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.hint{
+    color:#8993a4;
+    font-size:9px;
+    margin-top:6px;
+    line-height:1.8;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+}
+
+.category-btn{
+    position:relative;
+    min-height:58px;
+    border:1px solid #e0e6ef;
+    background:#fff;
+    border-radius:14px;
+    color:#445066;
+    cursor:pointer;
+    padding:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-align:right;
+    transition:.2s;
+}
+
+.category-btn .cat-icon{
+    width:35px;
+    height:35px;
+    flex:0 0 35px;
+    border-radius:10px;
+    background:#eef4ff;
+    color:#1264ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+}
+
+.category-btn strong{
+    display:block;
+    font-size:11px;
+}
+
+.category-btn small{
+    display:block;
+    font-size:8px;
+    color:#929bad;
+    margin-top:4px;
+}
+
+.category-btn.active{
+    background:#1264ff;
+    border-color:#1264ff;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(18,100,255,.2);
+}
+
+.category-btn.active .cat-icon{
+    background:rgba(255,255,255,.18);
+    color:#fff;
+}
+
+.category-btn.active small{
+    color:rgba(255,255,255,.75);
+}
+
+.check{
+    position:absolute;
+    top:6px;
+    left:7px;
+    font-size:11px;
+    display:none;
+}
+
+.category-btn.active .check{
+    display:block;
+}
+
+.subcategory-wrap{
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #edf0f5;
+}
+
+.subcategory-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:7px;
+}
+
+.subcategory-btn{
+    border:1px solid #e0e6ef;
+    background:#fff;
+    color:#4b566a;
+    border-radius:12px;
+    padding:11px 8px;
+    cursor:pointer;
+    font-size:10px;
+    transition:.2s;
+}
+
+.subcategory-btn:hover{
+    border-color:#b8c9ec;
+}
+
+.subcategory-btn.active{
+    background:#eef4ff;
+    color:#1264ff;
+    border-color:#1264ff;
+    font-weight:bold;
+}
+
+.subcategory-empty{
+    border:1px dashed #d9e0eb;
+    border-radius:13px;
+    padding:13px;
+    text-align:center;
+    color:#929bab;
+    font-size:10px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+}
+
+.location-box{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+}
+
+select{
+    appearance:auto;
+}
+
+.upload-box{
+    border:1px dashed #bfc9da;
+    background:#fafcff;
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+}
+
+.upload-box input{
+    display:none;
+}
+
+.upload-label{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    cursor:pointer;
+}
+
+.upload-icon{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    background:#eef4ff;
+    color:#1264ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+}
+
+.upload-label strong{
+    font-size:12px;
+}
+
+.upload-label span{
+    font-size:9px;
+    color:#8a94a5;
+}
+
+.previews{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
+    margin-top:12px;
+}
+
+.preview{
+    height:80px;
+    border-radius:11px;
+    overflow:hidden;
+    position:relative;
+    background:#edf1f7;
+}
+
+.preview img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.remove-image{
+    position:absolute;
+    top:4px;
+    left:4px;
+    width:22px;
+    height:22px;
+    border:0;
+    border-radius:50%;
+    background:rgba(0,0,0,.7);
+    color:white;
+    cursor:pointer;
+}
+
+.submit-btn{
+    width:100%;
+    border:0;
+    background:linear-gradient(135deg,#1264ff,#0044cf);
+    color:white;
+    border-radius:15px;
+    padding:15px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(18,100,255,.2);
+    transition:.2s;
+}
+
+.submit-btn:disabled{
+    opacity:.9;
+    cursor:not-allowed;
+}
+
+.loading{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+}
+
+.spinner{
+    width:17px;
+    height:17px;
+    border:2px solid rgba(255,255,255,.4);
+    border-top-color:white;
+    border-radius:50%;
+    animation:spin .7s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.message{
+    display:none;
+    margin-bottom:12px;
+    padding:12px;
+    border-radius:12px;
+    font-size:11px;
+    line-height:1.8;
+}
+
+.message.success{
+    display:block;
+    background:#ecfdf3;
+    border:1px solid #bbf7d0;
+    color:#15803d;
+}
+
+.message.error{
+    display:block;
+    background:#fff1f2;
+    border:1px solid #fecdd3;
+    color:#be123c;
+}
+
+.notice{
+    font-size:10px;
+    line-height:2;
+    color:#7c8799;
+    background:#f7f9fd;
+    border-radius:12px;
+    padding:11px;
+    margin-top:12px;
+}
+
+@media(min-width:650px){
+
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .subcategory-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .row{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .location-box{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <button class="back" onclick="goBack()">→</button>
+
+        <div class="header-title">
+            <h1>ثبت آگهی</h1>
+            <span>آگهی خود را در کوهمره سرخی ثبت کنید</span>
+        </div>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+<div id="message" class="message"></div>
+
+<form id="adForm">
+
+<!-- CATEGORY -->
+
+<section class="card">
+
+    <div class="card-title">
+
+        <h2>
+            دسته‌بندی
+            <span class="required">*</span>
+        </h2>
+
+        <span class="required-note">انتخاب دسته‌بندی الزامی است</span>
+
+    </div>
+
+    <div class="category-grid" id="categoryGrid"></div>
+
+    <input type="hidden" id="category">
+
+    <div class="subcategory-wrap">
+
+        <div class="card-title">
+
+            <h2>زیرمجموعه</h2>
+
+            <span class="required-note">اختیاری</span>
+
+        </div>
+
+        <div
+            class="subcategory-grid"
+            id="subcategoryGrid"
+        >
+            <div class="subcategory-empty">
+                ابتدا یک دسته‌بندی انتخاب کنید
+            </div>
+        </div>
+
+        <input type="hidden" id="subcategory">
+
+    </div>
+
+</section>
+
+
+<!-- BASIC INFO -->
+
+<section class="card">
+
+    <div class="card-title">
+        <h2>اطلاعات آگهی</h2>
+        <span class="required-note">موارد ستاره‌دار الزامی هستند</span>
+    </div>
+
+    <div class="field">
+
+        <label>
+            عنوان آگهی
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="title"
+            type="text"
+            placeholder="مثلاً فروش گوشی سامسونگ"
+            maxlength="100"
+        >
+
+        <div class="hint">
+            عنوان کوتاه و واضح باعث می‌شود آگهی شما بهتر دیده شود.
+        </div>
+
+    </div>
+
+    <div class="field">
+
+        <label>توضیحات</label>
+
+        <textarea
+            id="description"
+            placeholder="توضیحات کامل کالا یا خدمات را بنویسید..."
+            maxlength="3000"
+        ></textarea>
+
+        <div class="hint">
+            وضعیت، ویژگی‌ها، لوازم همراه و سایر اطلاعات مهم را بنویسید.
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="field">
+
+            <label>وضعیت</label>
+
+            <select id="condition">
+
+                <option value="نو">نو</option>
+                <option value="در حد نو">در حد نو</option>
+                <option value="کارکرده">کارکرده</option>
+                <option value="استفاده شده">استفاده شده</option>
+                <option value="توافقی">توافقی</option>
+
+            </select>
+
+        </div>
+
+        <div class="field">
+
+            <label>قیمت</label>
+
+            <input
+                id="price"
+                type="text"
+                inputmode="numeric"
+                placeholder="مثلاً ۵۹۹۰۰۰"
+            >
+
+            <div class="hint">
+                قیمت را به تومان وارد کنید. خالی گذاشتن یعنی توافقی.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="card">
+
+    <div class="card-title">
+
+        <h2>موقعیت</h2>
+
+        <span class="required-note">
+            منطقه آگهی
+        </span>
+
+    </div>
+
+    <div class="location-box">
+
+        <div class="field">
+
+            <label>منطقه</label>
+
+            <select id="region">
+
+                <option value="کوهمره سرخی">
+                    کوهمره سرخی
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="field">
+
+            <label>روستا / محل</label>
+
+            <select id="village">
+
+                <option value="">انتخاب کنید</option>
+                <option>حنیفقان</option>
+                <option>بورزکان</option>
+                <option>دارنجان لر</option>
+                <option>خیرآباد</option>
+                <option>نجف آباد</option>
+                <option>کره داشی</option>
+                <option>وحدت آباد</option>
+                <option>همت آباد</option>
+                <option>بیروکان</option>
+                <option>کیمیلی</option>
+                <option>انارمهر</option>
+                <option>سمنگان</option>
+                <option>میگلی</option>
+                <option>چنارسوخته</option>
+                <option>دادنجان</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <div class="field">
+
+        <label>آدرس یا توضیح محل</label>
+
+        <input
+            id="location"
+            type="text"
+            placeholder="مثلاً نزدیک مسجد روستا"
+        >
+
+        <div class="hint">
+            برای حفظ حریم خصوصی از وارد کردن آدرس دقیق منزل خودداری کنید.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- IMAGES -->
+
+<section class="card">
+
+    <div class="card-title">
+
+        <h2>تصاویر</h2>
+
+        <span class="required-note">حداکثر ۸ تصویر</span>
+
+    </div>
+
+    <div class="upload-box">
+
+        <label
+            for="images"
+            class="upload-label"
+        >
+
+            <div class="upload-icon">📷</div>
+
+            <strong>افزودن تصاویر</strong>
+
+            <span>
+                هر تصویر حداکثر ۶ مگابایت
+            </span>
+
+        </label>
+
+        <input
+            id="images"
+            type="file"
+            accept="image/*"
+            multiple
+        >
+
+    </div>
+
+    <div
+        class="previews"
+        id="previews"
+    ></div>
+
+</section>
+
+
+<!-- SELLER -->
+
+<section class="card">
+
+    <div class="card-title">
+
+        <h2>اطلاعات فروشنده</h2>
+
+        <span class="required-note">
+            اطلاعات تماس
+        </span>
+
+    </div>
+
+    <div class="field">
+
+        <label>
+            نام و نام خانوادگی
+            <span class="required">*</span>
+        </label>
+
+        <input
+            id="sellerName"
+            type="text"
+            placeholder="مثلاً راهخدا شهبازی"
+            maxlength="80"
+        >
+
+        <div class="hint">
+            نام واقعی خود را وارد کنید.
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="field">
+
+            <label>
+                شماره موبایل
+                <span class="required">*</span>
+            </label>
+
+            <input
+                id="sellerPhone"
+                type="tel"
+                inputmode="numeric"
+                placeholder="مثلاً ۰۹۱۲۱۲۳۴۵۶۷"
+                maxlength="13"
+            >
+
+            <div class="hint">
+                شماره باید با 09 شروع شود.
+            </div>
+
+        </div>
+
+        <div class="field">
+
+            <label>ایمیل</label>
+
+            <input
+                id="sellerEmail"
+                type="email"
+                placeholder="اختیاری"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SUBMIT -->
+
+<section class="card">
+
+    <button
+        id="submitBtn"
+        class="submit-btn"
+        type="submit"
+    >
+        ثبت آگهی
+    </button>
+
+    <div class="notice">
+        آگهی شما ابتدا در همین دستگاه ذخیره می‌شود و پس از ثبت،
+        به صورت خودکار به صفحه اصلی منتقل خواهید شد.
+    </div>
+
+</section>
+
+</form>
+
+</main>
+
+
+<script>
+
+const form = document.getElementById("adForm");
+
+const categoryGrid =
+    document.getElementById("categoryGrid");
+
+const subcategoryGrid =
+    document.getElementById("subcategoryGrid");
+
+const categoryInput =
+    document.getElementById("category");
+
+const subcategoryInput =
+    document.getElementById("subcategory");
+
+const titleInput =
+    document.getElementById("title");
+
+const descriptionInput =
+    document.getElementById("description");
+
+const conditionInput =
+    document.getElementById("condition");
+
+const priceInput =
+    document.getElementById("price");
+
+const regionInput =
+    document.getElementById("region");
+
+const villageInput =
+    document.getElementById("village");
+
+const locationInput =
+    document.getElementById("location");
+
+const sellerNameInput =
+    document.getElementById("sellerName");
+
+const sellerPhoneInput =
+    document.getElementById("sellerPhone");
+
+const sellerEmailInput =
+    document.getElementById("sellerEmail");
+
+const imagesInput =
+    document.getElementById("images");
+
+const previews =
+    document.getElementById("previews");
+
+const submitBtn =
+    document.getElementById("submitBtn");
+
+const message =
+    document.getElementById("message");
+
+let imagesData = [];
+
+const categoryData = {
+
+    "املاک":{
+        icon:"🏠",
+        sub:[
+            "خانه و ویلا",
+            "آپارتمان",
+            "زمین",
+            "باغ و باغچه",
+            "مغازه و تجاری",
+            "اجاره",
+            "فروش",
+            "سایر"
+        ]
+    },
+
+    "وسایل نقلیه":{
+        icon:"🚗",
+        sub:[
+            "خودرو",
+            "موتورسیکلت",
+            "دوچرخه",
+            "تراکتور و ماشین‌آلات",
+            "قطعات و لوازم",
+            "سایر"
+        ]
+    },
+
+    "کالای دیجیتال":{
+        icon:"📱",
+        sub:[
+            "موبایل",
+            "تبلت",
+            "لپ‌تاپ",
+            "کامپیوتر",
+            "لوازم جانبی",
+            "کنسول بازی",
+            "سایر"
+        ]
+    },
+
+    "خانه و آشپزخانه":{
+        icon:"🛋️",
+        sub:[
+            "مبلمان",
+            "لوازم خانگی",
+            "آشپزخانه",
+            "دکوراسیون",
+            "فرش",
+            "سایر"
+        ]
+    },
+
+    "خدمات":{
+        icon:"🛠️",
+        sub:[
+            "تعمیرات",
+            "حمل‌ونقل",
+            "ساختمانی",
+            "نظافت",
+            "فنی",
+            "آموزشی",
+            "سایر"
+        ]
+    },
+
+    "استخدام":{
+        icon:"💼",
+        sub:[
+            "کارگر ساده",
+            "فنی و ماهر",
+            "فروش و بازاریابی",
+            "راننده",
+            "اداری",
+            "خدماتی",
+            "سایر"
+        ]
+    },
+
+    "کشاورزی و دام":{
+        icon:"🌱",
+        sub:[
+            "دام",
+            "طیور",
+            "کشاورزی",
+            "نهال و بذر",
+            "ابزار کشاورزی",
+            "محصولات کشاورزی",
+            "سایر"
+        ]
+    },
+
+    "پوشاک":{
+        icon:"👕",
+        sub:[
+            "لباس زنانه",
+            "لباس مردانه",
+            "لباس کودک",
+            "کفش",
+            "کیف",
+            "سایر"
+        ]
+    },
+
+    "لوازم شخصی":{
+        icon:"⌚",
+        sub:[
+            "ساعت",
+            "زیورآلات",
+            "لوازم سفر",
+            "لوازم ورزشی",
+            "سایر"
+        ]
+    },
+
+    "سرگرمی و فراغت":{
+        icon:"🎮",
+        sub:[
+            "بازی",
+            "کنسول",
+            "کتاب",
+            "ساز",
+            "ورزش و تفریح",
+            "سایر"
+        ]
+    },
+
+    "تجهیزات":{
+        icon:"⚙️",
+        sub:[
+            "ابزارآلات",
+            "صنعتی",
+            "کارگاهی",
+            "برق و الکترونیک",
+            "تجهیزات ساختمانی",
+            "سایر"
+        ]
+    },
+
+    "سایر":{
+        icon:"📦",
+        sub:[
+            "سایر"
+        ]
+    }
+
+};
+
+
+function toEnglishDigits(value){
+
+    return String(value || "")
+        .replace(/[۰-۹]/g,d =>
+            "۰۱۲۳۴۵۶۷۸۹".indexOf(d)
+        )
+        .replace(/[٠-٩]/g,d =>
+            "٠١٢٣٤٥٦٧٨٩".indexOf(d)
+        );
+
+}
+
+
+function normalizePhone(value){
+
+    let phone =
+        toEnglishDigits(value)
+        .replace(/\D/g,"");
+
+    if(phone.startsWith("98")){
+        phone =
+            "0" + phone.substring(2);
+    }
+
+    if(phone.startsWith("9") &&
+       phone.length === 10){
+
+        phone = "0" + phone;
+
+    }
+
+    return phone;
+
+}
+
+
+function getRawPrice(){
+
+    return toEnglishDigits(priceInput.value)
+        .replace(/,/g,"")
+        .replace(/٬/g,"")
+        .replace(/\D/g,"");
+
+}
+
+
+priceInput.addEventListener("input",function(){
+
+    const raw = getRawPrice();
+
+    if(raw){
+
+        this.value =
+            Number(raw).toLocaleString("en-US");
+
+    }else{
+
+        this.value = "";
+
+    }
+
+});
+
+
+function renderCategories(){
+
+    categoryGrid.innerHTML = "";
+
+    Object.keys(categoryData).forEach(category => {
+
+        const data = categoryData[category];
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+
+        button.className =
+            "category-btn " +
+            (
+                categoryInput.value === category
+                ? "active"
+                : ""
+            );
+
+        button.innerHTML = `
+
+            <span class="cat-icon">
+                ${data.icon}
+            </span>
+
+            <span>
+                <strong>${category}</strong>
+                <small>${data.sub.length} زیرمجموعه</small>
+            </span>
+
+            <span class="check">✓</span>
+
+        `;
+
+        button.onclick = () => {
+
+            categoryInput.value = category;
+
+            subcategoryInput.value = "";
+
+            renderCategories();
+            renderSubcategories();
+
+        };
+
+        categoryGrid.appendChild(button);
+
+    });
+
+}
+
+
+function renderSubcategories(){
+
+    const category =
+        categoryInput.value;
+
+    subcategoryGrid.innerHTML = "";
+
+    if(!category){
+
+        subcategoryGrid.innerHTML = `
+            <div class="subcategory-empty">
+                ابتدا یک دسته‌بندی انتخاب کنید
+            </div>
+        `;
+
+        return;
+    }
+
+    const list =
+        categoryData[category].sub;
+
+    list.forEach(item => {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+
+        button.className =
+            "subcategory-btn " +
+            (
+                subcategoryInput.value === item
+                ? "active"
+                : ""
+            );
+
+        button.textContent = item;
+
+        button.onclick = () => {
+
+            if(subcategoryInput.value === item){
+
+                subcategoryInput.value = "";
+
+            }else{
+
+                subcategoryInput.value = item;
+
+            }
+
+            renderSubcategories();
+
+        };
+
+        subcategoryGrid.appendChild(button);
+
+    });
+
+}
+
+
+function showMessage(text,type){
+
+    message.className =
+        "message " + type;
+
+    message.textContent = text;
+
+}
+
+
+function renderPreviews(){
+
+    previews.innerHTML = "";
+
+    imagesData.forEach((src,index) => {
+
+        const box =
+            document.createElement("div");
+
+        box.className = "preview";
+
+        box.innerHTML = `
+
+            <img src="${src}">
+
+            <button
+                type="button"
+                class="remove-image"
+                onclick="removeImage(${index})"
+            >
+                ×
+            </button>
+
+        `;
+
+        previews.appendChild(box);
+
+    });
+
+}
+
+
+function removeImage(index){
+
+    imagesData.splice(index,1);
+
+    renderPreviews();
+
+}
+
+
+imagesInput.addEventListener("change",function(){
+
+    const files =
+        Array.from(this.files);
+
+    if(imagesData.length + files.length > 8){
+
+        showMessage(
+            "حداکثر ۸ تصویر می‌توانید انتخاب کنید.",
+            "error"
+        );
+
+        this.value = "";
+
+        return;
+
+    }
+
+    let pending = files.length;
+
+    if(!pending){
+        return;
+    }
+
+    files.forEach(file => {
+
+        if(file.size > 6 * 1024 * 1024){
+
+            pending--;
+
+            showMessage(
+                "یکی از تصاویر بیشتر از ۶ مگابایت است.",
+                "error"
+            );
+
+            return;
+
+        }
+
+        if(!file.type.startsWith("image/")){
+
+            pending--;
+
+            return;
+
+        }
+
+        const reader =
+            new FileReader();
+
+        reader.onload = function(e){
+
+            imagesData.push(e.target.result);
+
+            pending--;
+
+            renderPreviews();
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+    this.value = "";
+
+});
+
+
+form.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    if(submitBtn.disabled){
+        return;
+    }
+
+    const category =
+        categoryInput.value.trim();
+
+    if(!category){
+
+        showMessage(
+            "لطفاً یک دسته‌بندی انتخاب کنید.",
+            "error"
+        );
+
+        return;
+
+    }
+
+    const title =
+        titleInput.value.trim();
+
+    if(!title){
+
+        showMessage(
+            "لطفاً عنوان آگهی را وارد کنید.",
+            "error"
+        );
+
+        titleInput.focus();
+
+        return;
+
+    }
+
+    if(title.length < 3){
+
+        showMessage(
+            "عنوان آگهی باید حداقل ۳ حرف باشد.",
+            "error"
+        );
+
+        titleInput.focus();
+
+        return;
+
+    }
+
+    const sellerName =
+        sellerNameInput.value.trim();
+
+    if(!sellerName){
+
+        showMessage(
+            "لطفاً نام و نام خانوادگی را وارد کنید.",
+            "error"
+        );
+
+        sellerNameInput.focus();
+
+        return;
+
+    }
+
+    const sellerPhone =
+        normalizePhone(
+            sellerPhoneInput.value
+        );
+
+    if(!/^09\d{9}$/.test(sellerPhone)){
+
+        showMessage(
+            "شماره موبایل صحیح نیست. مثال: 09121234567",
+            "error"
+        );
+
+        sellerPhoneInput.focus();
+
+        return;
+
+    }
+
+    const priceRaw =
+        getRawPrice();
+
+
+    /*
+       شروع حالت ثبت
+    */
+
+    submitBtn.disabled = true;
+
+    submitBtn.innerHTML = `
+
+        <span class="loading">
+
+            <span class="spinner"></span>
+
+            در حال ثبت آگهی...
+
+        </span>
+
+    `;
+
+    message.className = "message";
+
+    /*
+       کمی تأخیر عمدی برای نمایش
+       انیمیشن ثبت آگهی
+    */
+
+    setTimeout(() => {
+
+        try{
+
+            const ads =
+                JSON.parse(
+                    localStorage.getItem("kohmareh_ads") || "[]"
+                );
+
+            const newAd = {
+
+                id:
+                    Date.now().toString(),
+
+                category,
+
+                subcategory:
+                    subcategoryInput.value.trim(),
+
+                title,
+
+                description:
+                    descriptionInput.value.trim(),
+
+                condition:
+                    conditionInput.value,
+
+                price:
+                    priceRaw || "0",
+
+                region:
+                    regionInput.value,
+
+                village:
+                    villageInput.value,
+
+                location:
+                    locationInput.value.trim(),
+
+                sellerName,
+
+                sellerPhone,
+
+                sellerEmail:
+                    sellerEmailInput.value.trim(),
+
+                images:
+                    imagesData,
+
+                createdAt:
+                    new Date().toISOString()
+
+            };
+
+
+            ads.unshift(newAd);
+
+
+            localStorage.setItem(
+                "kohmareh_ads",
+                JSON.stringify(ads)
+            );
+
+
+            showMessage(
+                "آگهی با موفقیت ثبت شد. در حال انتقال به صفحه اصلی...",
+                "success"
+            );
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "index.html";
+
+            },800);
+
+
+        }catch(error){
+
+            console.error(error);
+
+            submitBtn.disabled = false;
+
+            submitBtn.textContent =
+                "ثبت آگهی";
+
+            showMessage(
+                "ذخیره آگهی انجام نشد. احتمالاً فضای ذخیره‌سازی مرورگر پر شده است.",
+                "error"
+            );
+
+        }
+
+    },2500);
+
+});
+
+
+function goBack(){
+
+    if(document.referrer &&
+       document.referrer.includes(location.host)){
+
+        history.back();
+
+    }else{
+
+        window.location.href =
+            "index.html";
+
+    }
+
+}
+
+
+renderCategories();
+renderSubcategories();
+
+</script>
+
+</body>
+</html>

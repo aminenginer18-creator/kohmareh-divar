@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>پنل مدیریت | دیوار کوهمره سرخی</title>
+<link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:vazirmatn;
+    background:#f4f7fc;
+    color:#172033;
+    min-height:100vh;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #e3e8f0;
+}
+
+.header-inner{
+    max-width:1000px;
+    margin:auto;
+    padding:12px 15px;
+    min-height:70px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.admin-icon{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1264ff,
+            #0038b5
+        );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+
+    box-shadow:
+        0 8px 22px
+        rgba(18,100,255,.23);
+}
+
+.header-title{
+    flex:1;
+}
+
+.header-title h1{
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.header-title span{
+    color:#8791a2;
+    font-size:10px;
+}
+
+.home-btn{
+    border:1px solid #e0e6ef;
+    background:#fff;
+    color:#1264ff;
+
+    border-radius:12px;
+
+    padding:10px 12px;
+
+    font-size:10px;
+
+    cursor:pointer;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+
+    padding:
+        16px
+        13px
+        45px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+    margin-bottom:15px;
+}
+
+.stat{
+    background:#fff;
+
+    border:
+        1px solid
+        #e3e8f0;
+
+    border-radius:17px;
+
+    padding:15px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(30,50,90,.04);
+}
+
+.stat-icon{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.stat strong{
+    display:block;
+    font-size:20px;
+    color:#1264ff;
+}
+
+.stat span{
+    display:block;
+    margin-top:4px;
+
+    font-size:9px;
+
+    color:#8993a4;
+}
+
+.toolbar{
+    background:#fff;
+
+    border:
+        1px solid
+        #e3e8f0;
+
+    border-radius:17px;
+
+    padding:9px;
+
+    display:flex;
+    gap:8px;
+
+    margin-bottom:14px;
+}
+
+.search{
+    flex:1;
+
+    border:0;
+    outline:0;
+
+    background:#f7f9fd;
+
+    border-radius:11px;
+
+    padding:11px;
+
+    font-size:11px;
+}
+
+.refresh{
+    border:0;
+
+    background:#eef4ff;
+
+    color:#1264ff;
+
+    border-radius:11px;
+
+    padding:
+        0 13px;
+
+    cursor:pointer;
+
+    font-size:15px;
+}
+
+.ads{
+    display:grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:12px;
+}
+
+.ad-card{
+    background:#fff;
+
+    border:
+        1px solid
+        #e3e8f0;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 6px 20px
+        rgba(30,50,90,.04);
+}
+
+.card-top{
+    display:flex;
+    gap:12px;
+
+    padding:12px;
+}
+
+.image{
+    width:95px;
+    height:95px;
+
+    flex:0 0 95px;
+
+    background:#edf1f7;
+
+    border-radius:13px;
+
+    overflow:hidden;
+}
+
+.image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.no-image{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+
+    color:#9aa3b2;
+}
+
+.info{
+    flex:1;
+    min-width:0;
+}
+
+.category{
+    display:inline-block;
+
+    background:#eef4ff;
+    color:#1264ff;
+
+    padding:
+        5px
+        8px;
+
+    border-radius:8px;
+
+    font-size:8px;
+
+    margin-bottom:7px;
+}
+
+.info h2{
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-bottom:5px;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+}
+
+.price{
+    color:#1264ff;
+
+    font-weight:bold;
+
+    font-size:11px;
+
+    margin-bottom:5px;
+}
+
+.meta{
+    color:#8a94a5;
+
+    font-size:9px;
+
+    line-height:1.8;
+}
+
+.actions{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:7px;
+
+    padding:
+        0 12px
+        12px;
+}
+
+.action{
+    border:0;
+
+    border-radius:11px;
+
+    padding:11px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.view{
+    background:#eef4ff;
+    color:#1264ff;
+}
+
+.delete{
+    background:#fff1f2;
+    color:#e11d48;
+}
+
+.empty{
+    background:#fff;
+
+    border:
+        1px dashed
+        #d7deea;
+
+    border-radius:18px;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    color:#8993a4;
+}
+
+.empty-icon{
+    font-size:43px;
+
+    margin-bottom:12px;
+}
+
+.empty h2{
+    font-size:15px;
+
+    color:#465166;
+
+    margin-bottom:7px;
+}
+
+.empty p{
+    font-size:10px;
+
+    line-height:2;
+}
+
+.confirm-overlay{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:999;
+
+    background:
+        rgba(10,20,40,.55);
+
+    backdrop-filter:
+        blur(5px);
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.confirm-box{
+    width:100%;
+    max-width:360px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.2);
+}
+
+.confirm-icon{
+    font-size:40px;
+
+    margin-bottom:10px;
+}
+
+.confirm-box h3{
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.confirm-box p{
+    color:#7f899a;
+
+    font-size:10px;
+
+    line-height:2;
+
+    margin-bottom:17px;
+}
+
+.confirm-actions{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:8px;
+}
+
+.confirm-btn{
+    border:0;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    font-weight:bold;
+}
+
+.cancel{
+    background:#eef2f7;
+    color:#4d586b;
+}
+
+.confirm-delete{
+    background:#e11d48;
+    color:#fff;
+}
+
+.toast{
+    position:fixed;
+
+    bottom:20px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    background:#172033;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    padding:
+        11px
+        16px;
+
+    font-size:10px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:1000;
+}
+
+.toast.show{
+    opacity:1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+@media(min-width:650px){
+
+    .stats{
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+
+    .ads{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="admin-icon">
+            ⚙
+        </div>
+
+        <div class="header-title">
+
+            <h1>
+                پنل مدیریت
+            </h1>
+
+            <span>
+                مدیریت آگهی‌های دیوار کوهمره سرخی
+            </span>
+
+        </div>
+
+        <button
+            class="home-btn"
+            onclick="goHome()"
+        >
+            صفحه اصلی
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                📋
+            </div>
+
+            <strong id="totalAds">
+                ۰
+            </strong>
+
+            <span>
+                کل آگهی‌ها
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                🖼️
+            </div>
+
+            <strong id="imageAds">
+                ۰
+            </strong>
+
+            <span>
+                آگهی دارای تصویر
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                📍
+            </div>
+
+            <strong id="regionAds">
+                ۰
+            </strong>
+
+            <span>
+                کوهمره سرخی
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-icon">
+                🆕
+            </div>
+
+            <strong id="todayAds">
+                ۰
+            </strong>
+
+            <span>
+                آگهی‌های امروز
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="toolbar">
+
+        <input
+            id="search"
+            class="search"
+            type="text"
+            placeholder="جستجوی آگهی..."
+        >
+
+        <button
+            class="refresh"
+            onclick="loadAds()"
+        >
+            ↻
+        </button>
+
+    </div>
+
+
+    <div
+        class="ads"
+        id="ads"
+    ></div>
+
+
+</main>
+
+
+<!-- CONFIRM -->
+
+<div
+    class="confirm-overlay"
+    id="confirmOverlay"
+>
+
+    <div class="confirm-box">
+
+        <div class="confirm-icon">
+            🗑️
+        </div>
+
+        <h3>
+            حذف آگهی؟
+        </h3>
+
+        <p>
+            این آگهی و تصاویر آن از این دستگاه
+            حذف خواهند شد و قابل بازگشت نیستند.
+        </p>
+
+        <div class="confirm-actions">
+
+            <button
+                class="confirm-btn cancel"
+                onclick="closeConfirm()"
+            >
+                انصراف
+            </button>
+
+            <button
+                class="confirm-btn confirm-delete"
+                onclick="confirmDelete()"
+            >
+                حذف آگهی
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<script>
+
+let ads = [];
+
+let pendingDeleteId = null;
+
+
+function getAds(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem(
+                "kohmareh_ads"
+            ) || "[]"
+        );
+
+    }catch(error){
+
+        return [];
+
+    }
+
+}
+
+
+function saveAds(){
+
+    localStorage.setItem(
+        "kohmareh_ads",
+        JSON.stringify(ads)
+    );
+
+}
+
+
+function escapeHTML(value){
+
+    return String(value || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function formatPrice(value){
+
+    const num =
+        Number(value || 0);
+
+    if(!num){
+
+        return "توافقی";
+
+    }
+
+    return (
+        num.toLocaleString("fa-IR")
+        + " تومان"
+    );
+
+}
+
+
+function isToday(dateString){
+
+    if(!dateString){
+
+        return false;
+
+    }
+
+    const date =
+        new Date(dateString);
+
+    const today =
+        new Date();
+
+    return (
+        date.getFullYear() ===
+        today.getFullYear()
+
+        &&
+
+        date.getMonth() ===
+        today.getMonth()
+
+        &&
+
+        date.getDate() ===
+        today.getDate()
+    );
+
+}
+
+
+function loadAds(){
+
+    ads = getAds();
+
+    renderStats();
+
+    renderAds();
+
+}
+
+
+function renderStats(){
+
+    document.getElementById(
+        "totalAds"
+    ).textContent =
+        ads.length.toLocaleString("fa-IR");
+
+
+    const withImages =
+        ads.filter(ad =>
+            Array.isArray(ad.images) &&
+            ad.images.length > 0
+        ).length;
+
+    document.getElementById(
+        "imageAds"
+    ).textContent =
+        withImages.toLocaleString("fa-IR");
+
+
+    const regionCount =
+        ads.filter(ad =>
+            ad.region === "کوهمره سرخی"
+        ).length;
+
+    document.getElementById(
+        "regionAds"
+    ).textContent =
+        regionCount.toLocaleString("fa-IR");
+
+
+    const today =
+        ads.filter(ad =>
+            isToday(ad.createdAt)
+        ).length;
+
+    document.getElementById(
+        "todayAds"
+    ).textContent =
+        today.toLocaleString("fa-IR");
+
+}
+
+
+function renderAds(){
+
+    const box =
+        document.getElementById("ads");
+
+    const search =
+        document.getElementById(
+            "search"
+        ).value
+        .trim()
+        .toLowerCase();
+
+
+    const filtered =
+        ads.filter(ad => {
+
+            if(!search){
+
+                return true;
+
+            }
+
+            const text = (
+
+                (ad.title || "") +
+                " " +
+                (ad.description || "") +
+                " " +
+                (ad.category || "") +
+                " " +
+                (ad.subcategory || "") +
+                " " +
+                (ad.sellerName || "") +
+                " " +
+                (ad.village || "")
+
+            ).toLowerCase();
+
+            return text.includes(search);
+
+        });
+
+
+    box.innerHTML = "";
+
+
+    if(filtered.length === 0){
+
+        box.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    📭
+                </div>
+
+                <h2>
+                    آگهی‌ای وجود ندارد
+                </h2>
+
+                <p>
+                    هنوز آگهی‌ای ثبت نشده
+                    یا موردی مطابق جستجو پیدا نشد.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    filtered.forEach(ad => {
+
+        const card =
+            document.createElement("article");
+
+        card.className =
+            "ad-card";
+
+
+        const image =
+            Array.isArray(ad.images) &&
+            ad.images.length
+
+            ?
+
+            `
+                <img
+                    src="${ad.images[0]}"
+                    alt=""
+                >
+            `
+
+            :
+
+            `
+                <div class="no-image">
+                    📷
+                </div>
+            `;
+
+
+        card.innerHTML = `
+
+            <div class="card-top">
+
+                <div class="image">
+                    ${image}
+                </div>
+
+                <div class="info">
+
+                    <div class="category">
+
+                        ${escapeHTML(
+                            ad.category || "سایر"
+                        )}
+
+                        ${
+                            ad.subcategory
+                            ?
+                            " • " +
+                            escapeHTML(
+                                ad.subcategory
+                            )
+                            :
+                            ""
+                        }
+
+                    </div>
+
+                    <h2>
+                        ${escapeHTML(ad.title)}
+                    </h2>
+
+                    <div class="price">
+                        ${formatPrice(ad.price)}
+                    </div>
+
+                    <div class="meta">
+
+                        👤
+                        ${escapeHTML(
+                            ad.sellerName
+                        )}
+
+                        <br>
+
+                        📍
+                        ${escapeHTML(
+                            ad.village ||
+                            ad.region ||
+                            "کوهمره سرخی"
+                        )}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    class="action view"
+                    onclick="viewAd('${ad.id}')"
+                >
+                    👁 مشاهده
+                </button>
+
+                <button
+                    class="action delete"
+                    onclick="askDelete('${ad.id}')"
+                >
+                    🗑 حذف
+                </button>
+
+            </div>
+
+        `;
+
+
+        box.appendChild(card);
+
+    });
+
+}
+
+
+function viewAd(id){
+
+    window.location.href =
+        "ad.html?id=" +
+        encodeURIComponent(id);
+
+}
+
+
+function askDelete(id){
+
+    pendingDeleteId = id;
+
+    document.getElementById(
+        "confirmOverlay"
+    ).style.display = "flex";
+
+}
+
+
+function closeConfirm(){
+
+    pendingDeleteId = null;
+
+    document.getElementById(
+        "confirmOverlay"
+    ).style.display = "none";
+
+}
+
+
+function confirmDelete(){
+
+    if(!pendingDeleteId){
+
+        return;
+
+    }
+
+
+    ads =
+        ads.filter(ad =>
+            String(ad.id) !==
+            String(pendingDeleteId)
+        );
+
+
+    saveAds();
+
+
+    closeConfirm();
+
+    loadAds();
+
+    showToast(
+        "آگهی با موفقیت حذف شد."
+    );
+
+}
+
+
+function showToast(text){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+    toast.textContent =
+        text;
+
+    toast.classList.add("show");
+
+
+    setTimeout(() => {
+
+        toast.classList.remove(
+            "show"
+        );
+
+    },2200);
+
+}
+
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        renderAds
+    );
+
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+loadAds();
+
+</script>
+
+
+</body>
+
+</html>

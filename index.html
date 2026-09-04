@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دیوار کوهمره سرخی</title>
+<link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:vazirmatn;
+    background:#f4f7fc;
+    color:#172033;
+    min-height:100vh;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #e6ebf3;
+}
+
+.header-inner{
+    max-width:1000px;
+    margin:auto;
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.brand-icon{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#1264ff,#0039b8);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    font-weight:bold;
+    box-shadow:0 8px 22px rgba(18,100,255,.25);
+}
+
+.brand-text h1{
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.brand-text span{
+    font-size:11px;
+    color:#7b8495;
+}
+
+.post-btn{
+    border:0;
+    background:#1264ff;
+    color:#fff;
+    padding:11px 15px;
+    border-radius:13px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 7px 18px rgba(18,100,255,.2);
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:18px 14px 90px;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0758ed,#0035a7);
+    color:white;
+    border-radius:26px;
+    padding:25px 20px;
+    margin-bottom:18px;
+    box-shadow:0 15px 35px rgba(0,57,184,.18);
+}
+
+.hero h2{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.hero p{
+    font-size:12px;
+    opacity:.88;
+    line-height:1.9;
+}
+
+.search-box{
+    margin-top:18px;
+    background:#fff;
+    border-radius:17px;
+    padding:5px;
+    display:flex;
+    align-items:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.search-box input{
+    flex:1;
+    border:0;
+    outline:0;
+    padding:12px;
+    font-size:13px;
+    color:#222;
+}
+
+.search-icon{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    background:#eef4ff;
+    color:#1264ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:22px 3px 11px;
+}
+
+.section-title h3{
+    font-size:16px;
+}
+
+.section-title span{
+    font-size:11px;
+    color:#8791a4;
+}
+
+.categories{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:2px 1px 7px;
+    scrollbar-width:none;
+}
+
+.categories::-webkit-scrollbar{
+    display:none;
+}
+
+.category{
+    flex:0 0 auto;
+    border:1px solid #e1e7f0;
+    background:white;
+    color:#465166;
+    border-radius:13px;
+    padding:9px 13px;
+    font-size:12px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.category.active{
+    background:#1264ff;
+    border-color:#1264ff;
+    color:white;
+    box-shadow:0 7px 18px rgba(18,100,255,.2);
+}
+
+.ads{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+
+.ad-card{
+    background:#fff;
+    border:1px solid #e6ebf2;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 5px 16px rgba(25,40,70,.04);
+}
+
+.ad-card:active{
+    transform:scale(.98);
+}
+
+.ad-image{
+    width:100%;
+    height:155px;
+    background:#edf1f7;
+    position:relative;
+    overflow:hidden;
+}
+
+.ad-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.no-image{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#9aa3b2;
+    font-size:30px;
+}
+
+.image-count{
+    position:absolute;
+    left:8px;
+    bottom:8px;
+    background:rgba(0,0,0,.58);
+    color:#fff;
+    border-radius:9px;
+    padding:5px 8px;
+    font-size:10px;
+}
+
+.ad-content{
+    padding:12px;
+}
+
+.ad-content h4{
+    font-size:13px;
+    line-height:1.8;
+    margin-bottom:5px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.price{
+    font-size:12px;
+    font-weight:bold;
+    color:#1264ff;
+    margin-bottom:6px;
+}
+
+.meta{
+    color:#8791a1;
+    font-size:10px;
+    line-height:1.8;
+}
+
+.empty{
+    background:white;
+    border:1px dashed #d9e0eb;
+    border-radius:18px;
+    padding:40px 20px;
+    text-align:center;
+    color:#8a94a5;
+    grid-column:1/-1;
+}
+
+.empty-icon{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.empty h4{
+    color:#475267;
+    margin-bottom:7px;
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:100;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-top:1px solid #e5eaf2;
+}
+
+.bottom-inner{
+    max-width:600px;
+    margin:auto;
+    height:65px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.nav-item{
+    border:0;
+    background:none;
+    color:#8a93a4;
+    font-size:10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    cursor:pointer;
+}
+
+.nav-item .icon{
+    font-size:19px;
+}
+
+.nav-item.active{
+    color:#1264ff;
+}
+
+@media(min-width:700px){
+    .ads{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+    .ad-image{
+        height:180px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-inner">
+
+        <div class="brand">
+            <div class="brand-icon">د</div>
+
+            <div class="brand-text">
+                <h1>دیوار کوهمره سرخی</h1>
+                <span>خرید و فروش آسان در منطقه</span>
+            </div>
+        </div>
+
+        <button class="post-btn" onclick="goPost()">
+            + ثبت آگهی
+        </button>
+
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+
+        <h2>هر چیزی که می‌خوای پیدا کن 🔎</h2>
+
+        <p>
+            آگهی‌های خرید و فروش مردم کوهمره سرخی
+            را سریع و راحت پیدا کنید.
+        </p>
+
+        <div class="search-box">
+
+            <div class="search-icon">⌕</div>
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="جستجو در آگهی‌ها..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </section>
+
+    <div class="section-title">
+        <h3>دسته‌بندی‌ها</h3>
+        <span id="adCount"></span>
+    </div>
+
+    <div class="categories" id="categories"></div>
+
+    <div class="section-title">
+        <h3>آگهی‌های جدید</h3>
+        <span>آخرین آگهی‌ها</span>
+    </div>
+
+    <div class="ads" id="ads"></div>
+
+</main>
+
+<nav class="bottom-nav">
+
+    <div class="bottom-inner">
+
+        <button class="nav-item active" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            <span class="icon">⌂</span>
+            خانه
+        </button>
+
+        <button class="nav-item" onclick="document.getElementById('searchInput').focus()">
+            <span class="icon">⌕</span>
+            جستجو
+        </button>
+
+        <button class="nav-item" onclick="goPost()">
+            <span class="icon">＋</span>
+            ثبت آگهی
+        </button>
+
+    </div>
+
+</nav>
+
+<script>
+const categories = [
+    "همه",
+    "املاک",
+    "وسایل نقلیه",
+    "کالای دیجیتال",
+    "خانه و آشپزخانه",
+    "خدمات",
+    "استخدام",
+    "کشاورزی و دام",
+    "پوشاک",
+    "لوازم شخصی",
+    "سرگرمی و فراغت",
+    "تجهیزات",
+    "سایر"
+];
+
+let selectedCategory = "همه";
+let searchText = "";
+
+const categoriesBox = document.getElementById("categories");
+const adsBox = document.getElementById("ads");
+const searchInput = document.getElementById("searchInput");
+const adCount = document.getElementById("adCount");
+
+function getAds(){
+    try{
+        return JSON.parse(localStorage.getItem("kohmareh_ads") || "[]");
+    }catch(e){
+        return [];
+    }
+}
+
+function formatPrice(value){
+
+    const num = Number(value || 0);
+
+    if(!num){
+        return "توافقی";
+    }
+
+    return num.toLocaleString("fa-IR") + " تومان";
+}
+
+function escapeHTML(value){
+
+    return String(value || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function renderCategories(){
+
+    categoriesBox.innerHTML = "";
+
+    categories.forEach(category => {
+
+        const button = document.createElement("button");
+
+        button.className =
+            "category " +
+            (category === selectedCategory ? "active" : "");
+
+        button.textContent = category;
+
+        button.onclick = () => {
+
+            selectedCategory = category;
+
+            renderCategories();
+            renderAds();
+
+        };
+
+        categoriesBox.appendChild(button);
+
+    });
+}
+
+function renderAds(){
+
+    let ads = getAds();
+
+    const filtered = ads.filter(ad => {
+
+        const categoryMatch =
+            selectedCategory === "همه" ||
+            ad.category === selectedCategory;
+
+        const text =
+            (
+                (ad.title || "") + " " +
+                (ad.description || "") + " " +
+                (ad.subcategory || "") + " " +
+                (ad.village || "")
+            ).toLowerCase();
+
+        const searchMatch =
+            !searchText ||
+            text.includes(searchText.toLowerCase());
+
+        return categoryMatch && searchMatch;
+
+    });
+
+    adCount.textContent =
+        filtered.length.toLocaleString("fa-IR") + " آگهی";
+
+    adsBox.innerHTML = "";
+
+    if(filtered.length === 0){
+
+        adsBox.innerHTML = `
+            <div class="empty">
+                <div class="empty-icon">📭</div>
+                <h4>آگهی‌ای پیدا نشد</h4>
+                <p>برای این جستجو هنوز آگهی‌ای ثبت نشده است.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    filtered.forEach(ad => {
+
+        const card = document.createElement("div");
+
+        card.className = "ad-card";
+
+        const image =
+            ad.images &&
+            ad.images.length
+            ? `
+                <img
+                    src="${ad.images[0]}"
+                    alt="${escapeHTML(ad.title)}"
+                    loading="lazy"
+                >
+                ${
+                    ad.images.length > 1
+                    ? `<div class="image-count">📷 ${ad.images.length}</div>`
+                    : ""
+                }
+              `
+            : `<div class="no-image">📷</div>`;
+
+        card.innerHTML = `
+
+            <div class="ad-image">
+                ${image}
+            </div>
+
+            <div class="ad-content">
+
+                <h4>${escapeHTML(ad.title)}</h4>
+
+                <div class="price">
+                    ${formatPrice(ad.price)}
+                </div>
+
+                <div class="meta">
+                    ${escapeHTML(ad.category || "")}
+                    ${ad.subcategory ? " • " + escapeHTML(ad.subcategory) : ""}
+                    <br>
+                    📍 ${escapeHTML(ad.village || "کوهمره سرخی")}
+                </div>
+
+            </div>
+
+        `;
+
+        card.onclick = () => {
+
+            window.location.href =
+                "ad.html?id=" + encodeURIComponent(ad.id);
+
+        };
+
+        adsBox.appendChild(card);
+
+    });
+}
+
+searchInput.addEventListener("input", function(){
+
+    searchText = this.value.trim();
+
+    renderAds();
+
+});
+
+function goPost(){
+
+    window.location.href = "post.html";
+
+}
+
+renderCategories();
+renderAds();
+</script>
+
+</body>
+</html>

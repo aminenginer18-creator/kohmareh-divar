@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزئیات آگهی</title>
+<link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:vazirmatn;
+    background:#f4f7fc;
+    color:#172033;
+    min-height:100vh;
+}
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #e4e9f1;
+}
+
+.header-inner{
+    max-width:900px;
+    margin:auto;
+    min-height:65px;
+    padding:10px 14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.back{
+    width:42px;
+    height:42px;
+    border:1px solid #e0e6ef;
+    background:#fff;
+    border-radius:13px;
+    cursor:pointer;
+    font-size:19px;
+}
+
+.header-title{
+    font-size:15px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:14px 12px 45px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e3e8f0;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:13px;
+    box-shadow:0 7px 22px rgba(30,50,90,.045);
+}
+
+.gallery{
+    background:#edf1f7;
+    position:relative;
+}
+
+.main-image{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+}
+
+.gallery-empty{
+    height:280px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    color:#a0a9b7;
+}
+
+.thumbs{
+    padding:8px;
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    background:#fff;
+}
+
+.thumb{
+    width:62px;
+    height:62px;
+    flex:0 0 62px;
+    border-radius:10px;
+    object-fit:cover;
+    cursor:pointer;
+    border:2px solid transparent;
+}
+
+.thumb.active{
+    border-color:#1264ff;
+}
+
+.content{
+    padding:18px;
+}
+
+.category{
+    display:inline-block;
+    background:#eef4ff;
+    color:#1264ff;
+    border-radius:9px;
+    padding:6px 9px;
+    font-size:10px;
+    margin-bottom:10px;
+}
+
+.title{
+    font-size:19px;
+    line-height:1.8;
+    margin-bottom:9px;
+}
+
+.price{
+    color:#1264ff;
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:16px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.info{
+    background:#f8faff;
+    border-radius:12px;
+    padding:11px;
+}
+
+.info small{
+    display:block;
+    color:#8a94a5;
+    font-size:9px;
+    margin-bottom:5px;
+}
+
+.info strong{
+    font-size:11px;
+}
+
+.description{
+    padding:18px;
+}
+
+.description h3{
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.description p{
+    color:#566174;
+    font-size:12px;
+    line-height:2.1;
+    white-space:pre-wrap;
+}
+
+.seller{
+    padding:18px;
+}
+
+.seller h3{
+    font-size:14px;
+    margin-bottom:13px;
+}
+
+.seller-box{
+    background:#f8faff;
+    border-radius:14px;
+    padding:13px;
+}
+
+.seller-name{
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:7px;
+}
+
+.seller-phone{
+    color:#1264ff;
+    direction:ltr;
+    text-align:right;
+    font-size:13px;
+}
+
+.actions{
+    padding:15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.action{
+    border:0;
+    border-radius:13px;
+    padding:13px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:11px;
+}
+
+.home-btn{
+    background:#eef4ff;
+    color:#1264ff;
+    font-family:vazirmatn ;
+}
+
+.delete-btn{
+    background:#fff1f2;
+    color:#e11d48;
+}
+
+.not-found{
+    text-align:center;
+    background:#fff;
+    border-radius:20px;
+    padding:50px 20px;
+}
+
+.not-found-icon{
+    font-size:45px;
+    margin-bottom:12px;
+}
+
+.not-found h2{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.not-found p{
+    color:#8791a2;
+    font-size:11px;
+    line-height:2;
+}
+
+@media(min-width:650px){
+
+    .main-image{
+        height:450px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <button
+            class="back"
+            onclick="goBack()"
+        >
+            →
+        </button>
+
+        <div class="header-title">
+            جزئیات آگهی
+        </div>
+
+    </div>
+
+</header>
+
+<main
+    class="container"
+    id="page"
+></main>
+
+
+<script>
+
+const page =
+    document.getElementById("page");
+
+
+function getAds(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem("kohmareh_ads") || "[]"
+        );
+
+    }catch(e){
+
+        return [];
+
+    }
+
+}
+
+
+function escapeHTML(value){
+
+    return String(value || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function formatPrice(value){
+
+    const num =
+        Number(value || 0);
+
+    if(!num){
+        return "توافقی";
+    }
+
+    return num.toLocaleString("fa-IR") +
+        " تومان";
+
+}
+
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const id =
+    params.get("id");
+
+
+const ads =
+    getAds();
+
+const ad =
+    ads.find(item =>
+        String(item.id) === String(id)
+    );
+
+
+if(!ad){
+
+    page.innerHTML = `
+
+        <div class="not-found">
+
+            <div class="not-found-icon">
+                📭
+            </div>
+
+            <h2>
+                آگهی پیدا نشد
+            </h2>
+
+            <p>
+                این آگهی ممکن است حذف شده باشد
+                یا دیگر در این دستگاه موجود نباشد.
+            </p>
+
+            <button
+                class="action home-btn"
+                onclick="goHome()"
+                style="margin-top:18px"
+            >
+                بازگشت به صفحه اصلی
+            </button>
+
+        </div>
+
+    `;
+
+}else{
+
+    renderAd();
+
+}
+
+
+function renderAd(){
+
+    const images =
+        Array.isArray(ad.images)
+        ? ad.images
+        : [];
+
+    let galleryHTML = "";
+
+    if(images.length){
+
+        galleryHTML = `
+
+            <div class="gallery">
+
+                <img
+                    id="mainImage"
+                    class="main-image"
+                    src="${images[0]}"
+                    alt="${escapeHTML(ad.title)}"
+                >
+
+                ${
+                    images.length > 1
+                    ? `
+                        <div class="thumbs">
+
+                            ${images.map((img,index) => `
+
+                                <img
+                                    class="thumb ${
+                                        index === 0
+                                        ? "active"
+                                        : ""
+                                    }"
+                                    src="${img}"
+                                    onclick="changeImage(this,'${img}')"
+                                >
+
+                            `).join("")}
+
+                        </div>
+                    `
+                    : ""
+                }
+
+            </div>
+
+        `;
+
+    }else{
+
+        galleryHTML = `
+
+            <div class="gallery-empty">
+                📷
+            </div>
+
+        `;
+
+    }
+
+
+    page.innerHTML = `
+
+        <section class="card">
+
+            ${galleryHTML}
+
+            <div class="content">
+
+                <div class="category">
+
+                    ${escapeHTML(ad.category || "سایر")}
+
+                    ${
+                        ad.subcategory
+                        ? " • " +
+                          escapeHTML(ad.subcategory)
+                        : ""
+                    }
+
+                </div>
+
+                <h1 class="title">
+                    ${escapeHTML(ad.title)}
+                </h1>
+
+                <div class="price">
+                    ${formatPrice(ad.price)}
+                </div>
+
+                <div class="info-grid">
+
+                    <div class="info">
+
+                        <small>وضعیت</small>
+
+                        <strong>
+                            ${escapeHTML(ad.condition || "توافقی")}
+                        </strong>
+
+                    </div>
+
+                    <div class="info">
+
+                        <small>منطقه</small>
+
+                        <strong>
+                            ${escapeHTML(ad.region || "کوهمره سرخی")}
+                        </strong>
+
+                    </div>
+
+                    <div class="info">
+
+                        <small>روستا / محل</small>
+
+                        <strong>
+                            ${escapeHTML(ad.village || "ثبت نشده")}
+                        </strong>
+
+                    </div>
+
+                    <div class="info">
+
+                        <small>محل</small>
+
+                        <strong>
+                            ${escapeHTML(ad.location || "ثبت نشده")}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="card description">
+
+            <h3>
+                توضیحات آگهی
+            </h3>
+
+            <p>
+                ${
+                    escapeHTML(
+                        ad.description ||
+                        "توضیحاتی برای این آگهی ثبت نشده است."
+                    )
+                }
+            </p>
+
+        </section>
+
+
+        <section class="card seller">
+
+            <h3>
+                اطلاعات فروشنده
+            </h3>
+
+            <div class="seller-box">
+
+                <div class="seller-name">
+                    ${escapeHTML(ad.sellerName)}
+                </div>
+
+                <div class="seller-phone">
+                    ${escapeHTML(ad.sellerPhone)}
+                </div>
+
+                ${
+                    ad.sellerEmail
+                    ? `
+                        <div style="
+                            margin-top:8px;
+                            color:#687386;
+                            font-size:11px;
+                        ">
+                            ${escapeHTML(ad.sellerEmail)}
+                        </div>
+                    `
+                    : ""
+                }
+
+            </div>
+
+        </section>
+
+
+        <section class="card actions">
+
+    <button
+        class="action home-btn"
+        onclick="goHome()"
+        style="grid-column:1/-1"
+    >
+        ← بازگشت به صفحه اصلی
+    </button>
+
+</section>
+    `;
+
+}
+
+
+function changeImage(element,src){
+
+    const main =
+        document.getElementById("mainImage");
+
+    if(main){
+        main.src = src;
+    }
+
+    document
+        .querySelectorAll(".thumb")
+        .forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+    element.classList.add("active");
+
+}
+
+
+function deleteAd(){
+
+    const ok =
+        confirm(
+            "آیا مطمئن هستید که می‌خواهید این آگهی حذف شود؟"
+        );
+
+    if(!ok){
+        return;
+    }
+
+    const ads =
+        getAds().filter(item =>
+            String(item.id) !== String(id)
+        );
+
+    localStorage.setItem(
+        "kohmareh_ads",
+        JSON.stringify(ads)
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+function goBack(){
+
+    if(document.referrer &&
+       document.referrer.includes(location.host)){
+
+        history.back();
+
+    }else{
+
+        goHome();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
